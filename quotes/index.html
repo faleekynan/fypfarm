@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Цитаты - by FYP</title>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+
+<p>Кликни Левой Кнопкой Мыши в любом месте и цитата скопируется в буфер обмена</p>
+<textarea onclick="myFunction()" id="header"></textarea>
+
+  <script language="JavaScript">
+function myFunction() {
+  var copyText = document.getElementById("header");
+  copyText.select();
+  document.execCommand("Copy");
+
+
+setTimeout('self.close();', 600);
+}
+</script>
+ 
+
+<script src='./jquery-2.2.4.min.js'></script>
+</script><script  src="./script.js"></script>
+
+</body>
+</html>
