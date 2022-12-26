@@ -17,7 +17,7 @@
 </head>
 <body>
 
-
+<div class="white_back"></div>
   <div class="main">
   
  <div class="back">
@@ -46,7 +46,7 @@
 
 
 
-	   <textarea  readonly rows="3" class="en" name="en"  id="en"  type="text" ></textarea></br>
+	   <textarea   readonly rows="3" class="en" name="en"  id="en"  type="text" ></textarea></br>
 <textarea  readonly rows="3"  class="record_row" name="record_row"  id="record_row"  type="text" ></textarea>
 	   <textarea  readonly rows="3" name="date"  id="date" class="date_row"   type="text" ></textarea>
 	   
@@ -60,8 +60,17 @@
     
 	
     <textarea  readonly class="nationality" value = "">Україна/Ukr</textarea>
-   
 	
+   <div class="paste_inputs">
+<textarea rows="1" readonly class="paste_surname" id="paste_surname" name="paste_surname" type="text" ></textarea>
+<textarea rows="1" readonly class="en_paste_surname" id="en_paste_surname" name="en_paste_surname" type="text" ></textarea>
+
+<textarea rows="1" readonly class="paste_name" id="paste_name" name="paste_name" type="text" ></textarea>
+<textarea rows="1" readonly class="en_paste_name" id="en_paste_name" name="en_paste_name" type="text" ></textarea>
+
+<textarea rows="1" readonly class="paste_date" id="paste_date" name="paste_date" type="text" ></textarea>
+<textarea rows="1" readonly class="reverse_bir_date" id="reverse_bir_date" type="text"></textarea>
+	</div>
 	
 	
 	
@@ -82,17 +91,26 @@ document.getElementById("doc_number").innerHTML = randomNumber;
   </div>
    <div class="btn">
   <br>
-   <a class="btn_change" href="./old_index.html">Открыть старый генератор</a>
-   <br><br><br>
- <a class="btn_current">You Photo</a>
-<a class="btn_change" href="./index_random_photo.html">Random Photo</a>
-<a class="btn_change" href="./selphie.html">Selfie</a>
+   <a class="btn_change" href="./old_index.html">Старый генератор</a>
+<a class="btn_change" href="./selphie.html">Женские селфи</a>
 <br><br>
 <p class="alert">Соблюдение формата - ОБЯЗАТЕЛЬНО!!!</p>
-<textarea rows="3" name="main_row" class="main_row"  onfocus="this.select()" id="main_row"  type="text">Укр/Ру в формате -  Фамилия Имя Дата рождения</textarea>
+<p>Укажите данные в одну строку</p>
+<textarea rows="3" name="main_row" class="main_row"  onfocus="this.select()" id="main_row"  type="text" placeholder="Укр/Ру в формате -  Фамилия Имя Дата рождения (через пробел)"></textarea>
+<br>
+<p>Или укажите данные в каждой строке</p>
+<div class="inputs">
+<input id="surname" type="text" placeholder="Фамилия"/>
+<input id="name" type="text" placeholder="Имя"/>
+<br><br>
+<input id="bir_date" type="text" placeholder="Дата рождения"/>
+</div>
 
-<br><br><br><br>
+<p>Выбор фото</p>
+<button class="rand_btn" id="my_button">Random</button>
+<br><br>
  <input type='file' name="browser" id='file' />
+ <p>Или вставьте прямую ссылку на фото</p>
  <input class="url_input" type="url" id="image-input" placeholder="Введите URL ">
 <button class="url_btn" id="b">Вставить фото</button>
 <br><br><br>
@@ -100,11 +118,13 @@ document.getElementById("doc_number").innerHTML = randomNumber;
 <a class="btnn1">Скачать GIF</a>
 
 
+
+
 <p class="creo">== Created by <b style="color: blue;">FYP</b> ==</p>
 </div>
 <script  src="./js/script.js"></script>
  <script  src="./js/save.js"></script>
-  
+  <script  src="./js/rand.js"></script>
 <script  src="./js/translate.js"></script>
 <script  src="./js/copy.js"></script>
 </body>
