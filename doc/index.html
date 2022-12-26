@@ -56,8 +56,8 @@
     	<script  src="./js/middle_name.js"></script>
     </div>
 	
-    <textarea  readonly class="sex" >Ж/F</textarea>
-    
+    <textarea  readonly class="sex" id="f" >Ж/F</textarea>
+    <textarea style="display:none" readonly class="sex" id="m">Ч/M</textarea>
 	
     <textarea  readonly class="nationality" value = "">Україна/Ukr</textarea>
 	
@@ -70,6 +70,8 @@
 
 <textarea rows="1" readonly class="paste_date" id="paste_date" name="paste_date" type="text" ></textarea>
 <textarea rows="1" readonly class="reverse_bir_date" id="reverse_bir_date" type="text"></textarea>
+
+
 	</div>
 	
 	
@@ -103,6 +105,8 @@ document.getElementById("doc_number").innerHTML = randomNumber;
 <input id="name" type="text" placeholder="Имя"/>
 <br>
 <input id="bir_date" type="text" placeholder="Дата рождения" style="margin-top: 2%;"/>
+<label><input type="radio" checked name="answer" value="f"/>Ж</label>
+<label><input type="radio" name="answer" value="m"/>М</label>
 </div>
 
 <p>Выбор фото</p>
@@ -121,6 +125,7 @@ document.getElementById("doc_number").innerHTML = randomNumber;
 
 <p class="creo">== Created by <b style="color: blue;">FYP</b> ==</p>
 </div>
+<script  src="./js/checkbox.js"></script>
 <script  src="./js/script.js"></script>
  <script  src="./js/save.js"></script>
   <script  src="./js/rand.js"></script>

@@ -29,6 +29,9 @@
 	font-family: cursive;
 	margin-block-end: 0;
 }
+input[type="radio" i] {
+	width: auto;
+}
 
 .selphie{
 	margin: 0 auto;
