@@ -99,5 +99,5 @@ var images = [
 ];
 
 document.getElementById("my_button").addEventListener("click", function() {
-  document.getElementById("preview").src = images[Math.floor(Math.random()*5)%5]
+  document.getElementById("preview").src = images[Math.floor(Math.random()*images.length)]
 })
