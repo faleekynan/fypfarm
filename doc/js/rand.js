@@ -98,6 +98,14 @@ var images = [
 './no_bg/96.png',
 ];
 
+var m = [
+'./no_bg_m/1.jpeg',
+'./no_bg_m/2.jpeg',
+];
+
 document.getElementById("my_button").addEventListener("click", function() {
   document.getElementById("preview").src = images[Math.floor(Math.random()*images.length)]
+});
+document.getElementById("my_button_m").addEventListener("click", function() {
+  document.getElementById("preview").src = m[Math.floor(Math.random()*m.length)]
 })

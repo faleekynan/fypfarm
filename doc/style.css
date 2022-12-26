@@ -30,7 +30,7 @@
 	margin-block-end: 0;
 }
 input[type="radio" i] {
-	width: auto;
+	width: auto !important;
 }
 
 .selphie{
@@ -89,8 +89,7 @@ body{
 	    cursor: inherit;
 		position: fixed;
     left: 0;
-	top: 50%;
-    transform: translate(0, -50%);
+	
 	
 }
 .back{
@@ -103,19 +102,18 @@ body{
 }
 .btn{
 	    z-index: 999;
-    height: 900px;
+    height: 97%;
     width: 28%;
     margin-left: 2%;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
 	margin-top: 5px;
+    
 }
 
 .white_back{
-	position: absolute;
-    height: 100%;
+	position: fixed;
+    height: 97%;
     width: 1%;
     background: white;
     left: 0;
@@ -353,30 +351,133 @@ textarea{
 
 
 @media (max-width: 1600px){
+	.url_input {
+    font-size: 110% !Important;
+    padding: 4px;
+}
+
+.url_btn {
+    padding: 4px;
+    font-size: 110%;
+}
+
+.btnn, .btnn1, .btn_change {
+    background: lightgrey;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 110%;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+input[type="radio" i] {
+    width: auto;
+}
+.inputs input {
+    width: 45%;
+    margin-right: 1%;
+    font-size: 110% !important;
+    padding: 5px;
+}
+
+.rand_btn{
+	font-size: 110%;
+    background: blue;
+    color: yellow;
+    border: none;
+	padding: 5px 10px;
+}
+.rand_btn:hover{
+	opacity:0.7;
+}
+.inputs{
+	  
+}
+.paste_inputs input{
+	  
+}
+.inputs input{
+	    width:41%;
+		margin-right: 1%;
+		    font-size: 100% !important;
+    padding: 5px;
+}
+
+.creo{
+	position: absolute;
+    bottom: 1%;
+    right: 3rem;
+    font-size: 110%;
+	font-family: cursive;
+	margin-block-end: 0;
+}
+
+.white_back{
+	position: fixed;
+    height: 100%;
+    width: 1%;
+    background: white;
+    left: 0;
+    z-index: 999;
+}
+
+.paste_surname,
+.en_paste_surname,
+.paste_name,
+.en_paste_name,
+.paste_date,
+.reverse_bir_date{
+	position: absolute;
+	left: 45.5%;
+}
+.paste_surname{
+	top: 28%;
+}
+.en_paste_surname{
+	top: 31.2%;
+}
+.paste_name{
+	top: 36%;
+}
+.en_paste_name{
+	top: 39.2%;
+}
+.paste_date{
+	top: 54.5%;
+}
+.reverse_bir_date{
+	top: 54.6%;
+	left: 64%;
+	direction: rtl;
+    text-align: left;
+    word-spacing: -8px;
+}
 	.btn_current{
     padding: 10px 15px;
     font-size: 18px;
 }
 .btn_change{
-    padding: 10px 15px;
-    font-size: 18px;
+    padding: 5px 10px;
+    font-size: 110%;
 }
 
 
 .items{
 
-    top: 59.5%;
+    top: 60%;
     left: 52.75%;
 	width:112.5px;
     height:112.5px;
 }
 
 .middle_name{
-    top: 43.7%;
+    top: 44%;
 }
 .sex,
 .nationality{ 
-	 top: 49%;
+	 top: 49.1%;
 }
 
 
@@ -404,11 +505,11 @@ textarea{
 }
 
 .btn input{
-	font-size:135%;
+	font-size:110%;
 }
 .expiry,
 .num_doc{
-    top: 59%;   
+    top: 59.5%;   
 }
 .num_doc{
 
@@ -434,18 +535,18 @@ textarea{
 	left: 45.5%;
 }
 .ru{
-               top: 25.5%;
+               top: 26%;
     line-height: 300%;
   
 }
 
 .en{
-    top: 28.5%;
+    top: 29%;
      line-height: 300%;
 }
 .record_row,
 .date_row{
-	 top: 47%;
+	 top: 47.5%;
 }
 
 
@@ -464,7 +565,7 @@ textarea{
 }
 
 .code{
-	top: 54%;
+	top: 54.6%;
 }
 
 .selphie img {
@@ -594,30 +695,114 @@ textarea{
 }
 
 @media (max-width: 1366px){
+	.inputs input {
+    width: 45%;
+    margin-right: 1%;
+    font-size: 110% !important;
+    padding: 5px;
+}
+
+.rand_btn{
+	font-size: 80%;
+    
+}
+.rand_btn:hover{
+	opacity:0.7;
+}
+.inputs{
+	  
+}
+.paste_inputs input{
+	  
+}
+.inputs input{
+	 width: 43%;
+    margin-right: 1%;
+    font-size: 80% !important;
+    padding: 5px;
+}
+input[type="radio" i] {
+    width: auto;
+}
+.creo{
+	
+    bottom: 1%;
+
+    font-size: 80%;
+	
+}
+
+.white_back{
+	position: fixed;
+    height: 100%;
+    width: 1%;
+    background: white;
+    left: 0;
+    z-index: 999;
+}
+
+.paste_surname,
+.en_paste_surname,
+.paste_name,
+.en_paste_name,
+.paste_date,
+.reverse_bir_date{
+	position: absolute;
+	left: 45.5%;
+}
+.paste_surname{
+	top: 25%;
+}
+.en_paste_surname{
+	top: 28%;
+}
+.paste_name{
+	top: 32%;
+}
+.en_paste_name{
+	top: 35%;
+}
+.paste_date{
+	top: 48.5%;
+}
+.reverse_bir_date{
+	top: 48.5%;
+	left: 64%;
+	direction: rtl;
+    text-align: left;
+    word-spacing: -8px;
+}
+	
+	
 .btn_current{
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 110%;
 }
 .btn_change{
-    padding: 10px 15px;
-    font-size: 18px;
+    padding: 5px 10px;
+    font-size: 100%;
+}
+.btnn, .btnn1, .btn_change {
+    
+    font-size: 80%;
+   
 }
 
 
 .items{
 
-        top: 52.5%;
+        top: 53%;
     left: 55%;
     width: 105px;
     height: 105px;
 }
 
 .middle_name{
-    top: 38.6%;
+    top: 39%;
 }
 .sex,
 .nationality{ 
-	 top: 43.1%;
+	 top: 43.6%;
 }
 
 
@@ -645,11 +830,19 @@ textarea{
 }
 
 .btn input{
-	font-size:135%;
+	font-size:80%;
+}
+.url_input {
+    font-size: 80% !Important;
+    padding: 4px;
+}
+.url_btn {
+    padding: 4px;
+    font-size: 80%;
 }
 .expiry,
 .num_doc{
-    top: 52.5%;   
+    top: 53%;   
 }
 .num_doc{
 
@@ -662,8 +855,8 @@ textarea{
 }
 
 .main_row{
-  width: 90%;
-    font-size: 97.5%;
+  width: 95%;
+    font-size: 80%;
 }
 .ru,
 .en,
@@ -675,18 +868,19 @@ textarea{
 	left: 45.5%;
 }
 .ru{
-    top: 22.5%;
+    top: 23%;
     line-height: 290%;
   
 }
 
 .en{
-    top: 25.5%;
+    top: 25.8%;
     line-height: 290%;
 }
 .record_row,
 .date_row{
-	 top: 41.2%;
+	 top:41.8%;
+
 }
 
 
@@ -705,7 +899,7 @@ textarea{
 }
 
 .code{
-	top: 47.8%;
+	top: 48.5%;
 }
 .selphie img{
 	width: 60%;
