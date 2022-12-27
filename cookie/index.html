@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Конвертер куки</title>
+  <link rel="icon" href="http://fyp-farm.biz/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+<p>1. Вставь куки в форму ниже - мы удалим лишние пробелы</p>
+<p>2. Нажми кнопку Копировать куки</p>
+
+
+<textarea    placeholder="Вставь сюда скопированный куки" name="" id="textarea" ></textarea>
+<script>
+textarea.addEventListener('input', function(e) {
+	textarea.value = textarea.value.replace(/(\r\n|\n|\r)/gm, "");
+	textarea.value = textarea.value.replace(/ /gm, "");
+})
+</script>
+</br>
+<button  onclick="myFunction()"></button>
+ <script>
+ function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("textarea");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+window.location.reload();
+}
+ </script>
+ <script>document.getElementById('textarea').focus()</script>
+
+</body>
+</html>

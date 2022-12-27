@@ -1,0 +1,20 @@
+.selphie{
+	
+}
+.selphie img{
+display: block;
+    height: 97vh;
+    object-fit: contain;
+}
+.btn{
+	height: 3vh;
+	
+}
+body{
+	height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}

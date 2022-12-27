@@ -1,0 +1,29 @@
+button:focus::after{
+  color:blue;
+  content:"Куки скопированы";
+}
+button::after{
+  color:white;
+  content:"Копировать куки";
+}
+button{
+  height: 100px;
+    width: 806px;
+    font-size: 22px;
+    background: #E94B3C;
+	color:white;
+}
+button:hover{
+    background: red;
+	transition:0.5s;
+}
+textarea{
+  width: 800px;height: 500px;
+  font-size: 120%;
+}
+p{
+	font-size: 120%;
+}
+body{
+	text-align:center;
+}
