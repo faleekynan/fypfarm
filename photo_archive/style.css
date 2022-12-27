@@ -1,0 +1,21 @@
+.main{
+	text-align:center;
+}
+.btn{
+	
+}
+.btn a{
+	background: blue;
+    padding: 1%;
+    color: yellow;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.btn a:hover{
+	background: royalblue;
+    color: yellow;
+    transition:1s;
+}
+p{
+	font-size: 150%;
+}
