@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Дизельный генератор - by FYP</title>
-  
+  <script>
+document.oncontextmenu = cmenu; function cmenu() { return false; }
+</script>
   <script  src="./js/keyboard.js"></script>
 <link rel="stylesheet" href="./style.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
@@ -18,22 +20,17 @@
 </script>
 </head>
 <body>
-<div class="white_back">
-</div>
+
 
   <div class="main">
   
+ <div class="back">
  
-   
-	<div class="photo" id="photo_m" >
-	 
-	</div>
-   <div class="photo" id="photo" >
-	 
-	</div>
-	<div class="photo"  >
+
+
+	<div class="photo">
 	<img src='./img/ava.png' id="preview" />
-	 
+	  
 	</div>
 	<div class="golo">
 	<IMG SRC="img\golo.png">
@@ -99,10 +96,16 @@ document.getElementById("doc_number").innerHTML = randomNumber;
 
 	
 	
+	
+    </div>
   </div>
- 
+  
    <div class="btn">
-<div class="wrap">
+  <br>
+
+   <a class="btn_change" href="./old_index.html">Старый генератор</a>
+<a class="btn_change" href="./selphie.html">Женские селфи</a>
+<br>
 <p class="alert">Соблюдение формата - ОБЯЗАТЕЛЬНО!!!</p>
 <p>Укажите данные в одну строку</p>
 <textarea rows="3" name="main_row" class="main_row"  onfocus="this.select()" id="main_row"  type="text" placeholder="Укр/Ру в формате -  Фамилия Имя Дата рождения (через пробел)"></textarea>
@@ -115,34 +118,30 @@ document.getElementById("doc_number").innerHTML = randomNumber;
 <input id="bir_date" type="text" placeholder="Дата рождения" style="margin-top: 2%;"/>
 <label><input type="radio" checked name="answer" value="f"/>Ж</label>
 <label><input type="radio" name="answer" value="m"/>М</label>
-
 </div>
 
 <p>Выбор фото</p>
-
-<label id="f_ava">
-  <input class="f_ava" type="checkbox" name="coupon_question" value="1" />Women random photo 
-</label>
-<label id="m_ava" style="display:none">
-  <input class="m_ava" type="checkbox" name="coupon_question" value="1" />Man random photo
-</label>
-
+<button class="rand_btn" id="my_button">Random</button>
+<button class="rand_btn" id="my_button_m" style="display:none">Random</button>
 <br><br>
  <input type='file' name="browser" id='file' />
- <p id="note">Или вставьте прямую ссылку на фото</p>
+ <p>Или вставьте прямую ссылку на фото</p>
  <input class="url_input" type="url" id="image-input" placeholder="Введите URL ">
 <button class="url_btn" id="b">Вставить фото</button>
 <br><br><br>
 <a class="btnn">Скачать JPG</a>
 <a class="btnn1">Скачать GIF</a>
-</div> 
-</div> 
+
+
+
+
+<p class="creo">== Created by <b style="color: blue;">FYP</b> ==</p>
+</div>
 <script  src="./js/checkbox.js"></script>
-<script  src="./js/checkbox_rand.js"></script>
 <script  src="./js/script.js"></script>
  <script  src="./js/save.js"></script>
 <script  src="./js/translate.js"></script>
 <script  src="./js/copy.js"></script>
- <script  src="./js/random_ava.js"></script>
+<script  src="./js/rand.js"></script>
 </body>
 </html>
