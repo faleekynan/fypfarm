@@ -1,0 +1,1 @@
+a = prompt("Вставь куки и нажми ОК");   if (a == null || a == "") {      alert("Ну и ладно, давай досвидания!!!");   } else {   a = a.replace(/(\r\n|\n|\r)/gm, ""); 	a = a.replace(/ /gm, "");   navigator.clipboard.writeText(a);   }

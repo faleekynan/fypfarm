@@ -1,5 +1,9 @@
 .selphie{
-	
+	position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 .selphie img{
 display: block;
@@ -11,10 +15,7 @@ display: block;
 	
 }
 body{
-	height: 100vh;
+    height: 100vh;
     margin: 0 auto;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
 }
