@@ -132,16 +132,16 @@ function mySelfie() {
 }
 
 document.getElementById("gen_new").addEventListener("click", function() {
- let directory = "http://fyp-farm.biz/selfie/ava/";
-	let nb_of_files = 100;
+ let directory = "https://faleekynan.github.io/fypfarm/random_selfie/";
+	let nb_of_files = 1000;
 
 	function getRandomInt(max) { // number between 1 & max
 		return ( Math.floor(Math.random() * Math.floor(max)) )+1;
 	}
 
-	let random_int = getRandomInt(100);
+	let random_int = getRandomInt(1000);
 	let img = document.getElementById('display_selfie');
-	img.src = directory + random_int +".jfif";
+	img.src = directory + random_int +".jpeg";
 });
 
 function mySearch() {var myTxt=["Путешествия","Путешествия Европа","Путешествия по Европе","Отдых в Европе","Лоты казино","Как стать богатым","Саморазвитие","Личностный рост","Схемы заработка в интернете","Как вести бизнес","Бизнес","Инвестиции","Поиск инвестора Киев","Поиск инвестора Львов","Как начать бизнес","Бизнес для начинающих","Рулетка казино","Покер","Видео игры","Знакомства","Знакомства в Украине","Знакомства Украина","Знакомства Киев","Найти пару","Группа знакомств","Как стать миллионером","Группы по развитию и личностному росту","Самосовершенствование","Природа Европы","Товары для дома Киев","Оптовые базы","Бизнес с нуля","Деньги в интернете"];randnm=Math.round(Math.random()*(myTxt.length-1)); navigator.clipboard.writeText(myTxt[randnm]); var el = document.getElementById("main");el.remove();}
