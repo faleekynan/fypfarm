@@ -8,7 +8,7 @@ plugin URL : https://github.com/tsayen/dom-to-image
 $(document).ready(function(){
   $(".btnn").on("click",function(){
     
-    domtoimage.toJpeg(document.getElementsByClassName('selphie')[0], { quality: 0.95 })
+    domtoimage.toJpeg(document.getElementById('f'), { quality: 0.95 })
     .then(function (dataUrl) {
         var link = document.createElement('a');
 		var num = Math.floor((Math.random() * 8888888) + 1000000);

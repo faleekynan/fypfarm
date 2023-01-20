@@ -178,6 +178,18 @@ var path = './ava/',
 '176.jfif',
 '177.jfif',
 '178.jfif',
- ],
+ ];
+ 
+ var path1 = './ava_m/',
+    imgs_m = [
+	'1.jpg',
+    '2.jpg',
+	];
+ 
+ 
+ 
     i = Math.floor(Math.random()*imgs.length);
-$('#rand').append("<img src='"+path+imgs[i]+"'>");                  
+$('#f').append("<img src='"+path+imgs[i]+"'>");
+
+a = Math.floor(Math.random()*imgs_m.length);
+$('#m').append("<img src='"+path1+imgs_m[a]+"'>");                         

@@ -11,8 +11,8 @@
 <textarea    placeholder="Вставь сюда скопированный куки" name="" id="textarea" ></textarea>
 <script>
 textarea.addEventListener('input', function(e) {
-	textarea.value = textarea.value.replace(/(\r\n|\n|\r)/gm, ":");
-	textarea.value = textarea.value.replace(/ /gm, ":");
+	textarea.value = textarea.value.replace(/(\r\n|\n|\r)/gm, ";");
+	textarea.value = textarea.value.replace(/ /gm, ";");
 	textarea.value = textarea.value.replace(/(")/gm, "");
 })
 </script>

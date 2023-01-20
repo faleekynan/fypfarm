@@ -1,21 +1,46 @@
 .selphie{
-	position: absolute;
+	position: relative;
     margin: 0 auto;
     text-align: center;
-    left: 50%;
-    transform: translate(-50%, 0%);
 }
 .selphie img{
 display: block;
-    height: 97vh;
+    height: 100vh;
     object-fit: contain;
 }
 .btn{
-	height: 3vh;
+	position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    top: 1%;
 	
 }
 body{
     height: 100vh;
     margin: 0 auto;
     text-align: center;
+}
+#m{
+	float:right;
+}
+#f{
+	display: inline-table;
+}
+
+button{
+	    font-size: 1.8rem;
+    font-family: system-ui;
+    padding: 5px 15px;
+    border: solid 2px #E94B3C;
+    border-radius: 10px;
+}
+button:hover{
+	        background: #E94B3C;
+    color: white;
+    transition: 0.2s;
+}
+button:focus{
+	        background: white;
+    color:black;
 }

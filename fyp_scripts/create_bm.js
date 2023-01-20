@@ -1,13 +1,5 @@
 (function(d) {
 
-'use strict';
-
-if (location.hostname.match('business.facebook.com') === null) {
-
-return alert('Chi chay trên Business');
-
-}
-
 let length = 10;
 
 let fb_dtsg = require('DTSGInitialData').token;

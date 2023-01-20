@@ -1,0 +1,116 @@
+<style>
+h1{
+display: block;
+color:black;
+font-size: 2em;
+margin-block-start: 0.67em;
+margin-block-end: 0.67em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold;
+}
+.btns{
+margin: 0 0 1em 0;
+display: grid;
+}
+#main{
+text-align: center;
+line-height: 1;
+padding: 0px 20px 0 20px;
+background: white;
+border-radius: 1rem;
+box-shadow: rgb(0 0 0 / 20%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px;
+font-family: sans-serif;
+color: #65676B;
+z-index: 99999999999;
+position: fixed;
+top: 40px;
+left: 50%;
+transform: translate(-50%, 0);
+}
+#main span{
+font-weight: 500;
+cursor: pointer;
+color: #202020;
+font-size: 1rem;
+padding: 10px 15px;
+border-radius: 8px;
+background: rgba(0, 0, 0, 0.1);
+margin-bottom: 1rem;
+}
+#main span:hover{
+color: #1877F2;
+transition: 0.5s;
+background: #E7F3FF;
+}
+p{
+margin-left: 0;
+font-size: 1rem;
+margin-block-end: 2em;
+font-weight: 500;
+}
+#header{
+padding-bottom: 0.1rem;
+}
+#main button{
+border-radius: 8px;
+margin-bottom: 15px;
+padding: 8px 15px;
+font-size: 1rem;
+background: rgba(0, 0, 0, 0.1);
+color: #202020;
+border: none;
+cursor: pointer;
+}
+#main button:hover{
+transition:0.5s;
+background: #E94B3C;
+color: white;
+}
+.btns input{
+background: rgba(0, 0, 0, 0.1);
+border: navajowhite;
+border-radius: 8px;
+padding: 10px;
+font-size: 1rem;
+margin-bottom: 0.5rem;
+text-align: center;
+}
+hr{
+width: 50%;
+margin-top: 0.25rem;
+margin-bottom: 1rem;
+}
+</style>
+<div id="main">
+<div id="header">
+<h1>FYP Scripts</h1>
+
+</div>
+<div class="btns">
+<span onclick="mySearch()" >Поисковый запрос</span>
+<span onclick="myQuote()" >Случайная цитата</span>
+<span onclick="myFpname()" >Название для ФП</span>
+<span onclick="mySelfie()" >Селфи</span>
+
+<span onclick="myAnanasko()" >Ананаско</span>
+<span onclick="myZhuk()" >Жук</span>
+<hr>
+<input id="mail" placeholder="Вставь в меня"/>
+<span onclick="myMail()" >Привязать почту</span>
+
+
+</div>
+<button id="close" onclick="myClose()" >Закрыть</button>
+</div>
+
+<script>function mySearch() {var myTxt=["Путешествия","Путешествия Европа","Путешествия по Европе","Отдых в Европе","Лоты казино","Как стать богатым","Саморазвитие","Личностный рост","Схемы заработка в интернете","Как вести бизнес","Бизнес","Инвестиции","Поиск инвестора Киев","Поиск инвестора Львов","Как начать бизнес","Бизнес для начинающих","Рулетка казино","Покер","Видео игры","Знакомства","Знакомства в Украине","Знакомства Украина","Знакомства Киев","Найти пару","Группа знакомств","Как стать миллионером","Группы по развитию и личностному росту","Самосовершенствование","Природа Европы","Товары для дома Киев","Оптовые базы","Бизнес с нуля","Деньги в интернете"];randnm=Math.round(Math.random()*(myTxt.length-1)); navigator.clipboard.writeText(myTxt[randnm]); var el = document.getElementById("main");el.remove();}
+function myQuote() {for(var matches,options,random,text="{You must be the change you wish to see in the world.|Life is either a daring adventure or nothing at all.|Life is a mixing of all kind of things: comedy and tragedy going together.|We are evolved to search for meaning but ultimately life has none.|Children havemore need of modelsthan critics.|May you live all the days of your life.|Life isnt about finding yourself. Life is about creating yourself.|Life is a succession of lessons which must be lived to be understood.|Never trust people who smile constantly. Theyre either selling something or not very bright.|The tragedy of life is what dies inside a man while he lives.|Our crisis is no longer material; its existential its spiritual. We have so much fucking stuff and so many opportunities that we dont even know what to give a fuck about anymore.|Life is neither good or evil but only a place for good and evil.|Try to enjoy the great festival of life with other men!|Life is beautiful because it doesnt last.|What a kid I got I told him about the birds and the bees and he told me about the butcher and my wife.|Relentlessly prune bullshit dont wait to do things that matter and savor the time you have. Thats what you do when life is short.|Life is a mixing of all kind of things: comedy and tragedy going together.|Life is a single player game.|I can resist everything except temptation.|Those who realize their folly are not true fools.|} {The trick in life is learning how to deal with it|The hardest thing to learn in life is which bridge to cross and which bridge to burn.|Women and cats will do as they please and men and dogs should relax and get used to the idea.|Dost thou love life? Then do not squander time for that is the stuff life is made of|Other things may change us but we start and end with the family.|See: its a never-ending upward spiral. And if you think at any point youre allowed to stop climbing Im afraid youre missing the point. Because the joy is in the climb itself.|Life is a continuous process of adjustment.|Its better to dance than to march through life.|If you want to live a happy life tie it to a goal not to people or things.|Dont gain the world and lose your soul wisdom is better than silver or gold|The good life is a process not a state of being. It is a direction not a destination.|We know what we are but know not what we may be|In the end its not the years in your life that count. Its the life in your years.|The more unintelligent a man is the less mysterious existence seems to him.|Its better to be a lion for a day than a sheep all your life.|The purpose of our lives is to be happy.|Your time is limited so dont waste it living someone elses life. Dont be trapped by dogma which is living with the results of other peoples thinking. Dont let the noise of others opinions drown out your own inner voice. And most important have the courage to follow your heart and intuition.|Life is to be lived not controlled and humanity is won by continuing to play in face of certain defeat.|Loving people live in a loving world. Hostile people live in a hostile world. Same world.|Life is to entered upon with courage.}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(text));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),text=text.replace(matches[0],options[random]);navigator.clipboard.writeText(text);var el = document.getElementById("main");el.remove();}
+function myFpname() {for(var matches,options,random,text="{Uthman|Lawrence|Immanuel|Nikko|Salvador|Josue|Pierce|Xever|Nick|Landen|Percy|Xayvion|Levi|Harold|Samir|Edison|Vinson|Milo|Xiomar|Yash|Finley|Forest|Xeno|Collin|Yakov|Leonidas|Ulric|Xun|Conor|Zeppelin|Francisco|Brentley|Conner|Dawson|Roberto|Quintrell|Hartley|Penn|Ryker|Raul|Kye|Shawn|Samir|Derek|Porter|Muhammad|Declan|Winston|Yeshua|Nehemiah|Emmitt|Tanner|Hugo|Quinto|Truman|Yunis|Gordon|Gideon|Grayson|Nikhil|Xandro|Raul|Jackson|Watson|Gunnar|Quent|Xandros|Zachary|Lionel|Leo|Dexter|Ethan|Raiden|Lucas|Harlow|Abel|Ximenez|Wylie|Xun|Neil|Collin|Owen|Angelo|Viktor|Neal|Luciano|Gentry|Nathanael|Manuel|River|Lionel|Grey|Yash|Grant|Pembroke|Asher|Chase|Viktor|Raul||Raul|Urbane|Ian|Leonardo|Osman|Armando|Quenton|Quint|Price|Jason|Israel|Osiris|Diego|Arthur|Otis|Matteo|Presleigh|Gentry|Foster|Uriah|Quentrell|Zachariah|Finlee|Vaughn|Keith|Nicolai|Charles|Finley|Xavier|Adonis|Edwin|Yakov|Kaleb|Lawson|Jace|Derrick|Christopher|Clayton|Colt|Xander|Hamza|Jorge|Ford|Percy|Andres|Jeffrey|Hartley|Omar|Lucas|Khalil|Theodore|Gianni|Guillermo|Victor|Xan|Roy|Ezra|Xenos|Uthman|Caiden|Declan|Vernen|Brentley|Thatcher|Ximenez|Nasir} {Nelson|Jackson|Robinson|Hall|Nelson|Butler|Lee|Hayes|Sanchez|Wright|Morris|Evans|Ward|Clark|Lewis|Taylor|Reed|Martin|Johnson|Garcia|Walker|Rivera|Sanders|Gray|Howard|Hayes|Hall|Murphy|Jenkins|Hernandez|Hayes|Coleman|Henderson|Wood|Ross|Murphy|Torres|Martinez|Ramirez|Young|Gonzales|Garcia|Ramirez|Washington|Lopez|Bell|Cooper|Jones|Miller|Thompson|White|Jones|Lee|Campbell|James|Perry|Coleman|Walker|Peterson|Sanchez|Lee|Morgan|Perry|Cook|Cox|Edwards|Moore|Wilson|Peterson|Taylor|Robinson|Carter|Foster|Johnson|Rivera|Wilson|Stewart|Walker|Perez|Allen|Watson|Powell|Green|Lewis|Diaz|Brown|Long|Edwards|Diaz|Murphy|Hayes|Morris|Evans|Bryant|Anderson|Miller|Butler|Rogers|Nelson|Campbell|Foster|King|James|Parker|Jones|Young|Torres|Williams|Jackson|Rodriguez|Nelson|Jenkins|Ross|Coleman|Wilson|Jenkins|Ward|Lopez|Rogers|James|Torres|Foster|Morris|Nelson|Wilson|Martin|Morris|Perez|Scott|Roberts|Allen|Powell|Martin|Hernandez|Reed|Morgan|Williams|Scott|Young|Phillips|Murphy|Wright|Taylor|Patterson|Cox|Taylor|Kelly|Long|Thompson|Carter|Wilson|Foster|Torres|Diaz|White|Wilson|Hall|Thomas|Hayes|Washington|Ward|Phillips|Diaz|Cooper|Baker|Baker|Smith|Sanders|Price|Price|Robinson|Flores|Davis|Lewis|Phillips|Anderson|Sanders|Martin|Wood|Simmons|Rogers|Harris|Collins|Wood|Murphy|Ramirez|Sanchez|Jones|Davis|Wright|Diaz|Martin|Richardson|Foster|Diaz|Adams|Taylor|Henderson|Hall|Jones|Price|Cox|Bell|Gonzalez|Ward|Moore|Powell|Lee|Alexander|Rodriguez|Bennett|Perry|Turner|Williams|Gonzalez|Gray|Kelly|Howard|Thomas|Hall|Carter|Henderson|Hayes|Rivera|Hernandez|Bryant|Cook|Howard|Reed|Stewart|Howard|Jenkins|Reed|White|Hill|Peterson|Collins|Brown|Flores|Flores|James|Cox|Long|White|Bennett|James|Bell|Patterson|Allen|Martinez|Carter|Cox|Ross|Phillips} ",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(text));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),text=text.replace(matches[0],options[random]);navigator.clipboard.writeText(text);var el = document.getElementById("main");el.remove();}
+function myClose(){var el = document.getElementById("main");el.remove();}
+function mySelfie(){window.open("http://fyp-farm.biz/selfie/");var el = document.getElementById("main");el.remove();}
+function myAnanasko(){window.open("https://ananasko.com/ru/checkout/");var el = document.getElementById("main");el.remove();}
+function myZhuk(){window.open("https://zhuk.ua/checkout/");var el = document.getElementById("main");el.remove();}
+function myMail(){let age = document.getElementById("mail").value;; var spinR = require(["SiteData"]).__spin_r; var spinB = require(["SiteData"]).__spin_b; var spinT = require(["SiteData"]).__spin_t; var jazoest = require(["SprinkleConfig"]).jazoest; var fbdtsg = require(["DTSGInitData"]).token; var userId = require(["CurrentUserInitialData"]).USER_ID; var hsi = require(["SiteData"]).hsi; var email = age; var url = "https://www.facebook.com/add_contactpoint/dialog/submit/"; var data = "jazoest=22134&fb_dtsg=" + fbdtsg + "&next=&contactpoint=" + email + "&__user=" + userId + "&__a=1&__dyn=&__req=1&__be=1&__pc=PHASED%3ADEFAULT&dpr=1&__rev=&__s=&__hsi=" + hsi + "&__spin_r=" + spinR + "&__spin_b=" + spinB + "&__spin_t=" + spinT; fetch(url, {     method: "POST",     body: data,     headers: {         "Content-Type": "application/x-www-form-urlencoded"     } }).then(e => e.text()).then(e => {});var el = document.getElementById("main");el.remove();}
+</script>
+
