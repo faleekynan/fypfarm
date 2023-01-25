@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+margin:0;
+font-family: 'Roboto', sans-serif;
+}
+.main{
+position: fixed;
+    display: flex;
+}
+.back,
+.front{
+
+    background-size: contain;
+    height: 53.563rem;
+    width: 80rem;
+    background-repeat: no-repeat;
+}
+.front{
+	
+	background-image: url(img/front.jpg);
+}
+.back{
+	background-image: url(img/back.jpg);
+}
+.ava{
+	position: absolute;
+    left: 15rem;
+    top: 21rem;
+}
+.ava img{
+	width: 18.313rem;
+    height: 24.875rem;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.7;
+    object-fit: cover;
+}
+
+.btns{
+margin: 1rem 0 0 1rem;
+}
+textarea{
+	    opacity: 0.75;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    background: none;
+    font-size: 1.85rem;
+    text-transform: uppercase;
+    cursor: alias;
+}
+.sex,
+.middle_name,
+.expiry,
+.paste_surname,
+.en_paste_surname,
+.paste_name,
+.en_paste_name,
+.paste_date{
+	position: absolute;
+    left: 36.4rem;
+}
+
+.sex{
+	top: 33.3rem;
+}
+.middle_name{
+	top: 29.8rem;
+}
+.expiry{
+	top: 40.5rem;
+}
+.paste_surname{
+	top: 19.3rem;
+}
+.en_paste_surname{
+	top: 21.3rem;
+}
+.paste_name{
+	top: 24.5rem;
+}
+.en_paste_name{
+	top: 26.5rem;
+}
+.paste_date{
+	    top: 36.8rem;
+}
+
+.reverse_bir_date,
+.doc_number,
+.nationality{
+	left: 51.4rem;
+	position: absolute;
+}
+.reverse_bir_date{
+	top: 36.8rem;
+}
+.doc_number{
+    top: 40.5rem;
+}
+.nationality{
+    top: 33.3rem;
+}

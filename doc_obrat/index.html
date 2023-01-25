@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Дизельный генератор - by FYP</title>
+  
+ 
+<link rel="stylesheet" href="./style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+</head>
+<body>
+<div class="main">
+
+
+	<div class="front"  id="front">
+	<div class="ava">
+	<img src='./img/ava.png' id="preview" />
+	</div>
+	
+	<div class="paste_inputs">
+<textarea rows="1" readonly class="paste_surname" id="paste_surname" name="paste_surname" type="text" >Бойко</textarea>
+<textarea rows="1" readonly class="en_paste_surname" id="en_paste_surname" name="en_paste_surname" type="text" >Boyko</textarea>
+
+<textarea rows="1" readonly class="paste_name" id="paste_name" name="paste_name" type="text" >Анна</textarea>
+<textarea rows="1" readonly class="en_paste_name" id="en_paste_name" name="en_paste_name" type="text" >Anna</textarea>
+
+<textarea rows="1" readonly class="paste_date" id="paste_date" name="paste_date" type="text" >06 07 1999</textarea>
+<textarea rows="1" readonly class="reverse_bir_date" id="reverse_bir_date" type="text">19990706-005</textarea>
+</div>
+<div id="expiry"></div>
+<div id="middle_name"></div>	
+<textarea  rows="1"  readonly class="sex" id="f" >Ж/F</textarea>	
+<textarea  rows="1" readonly class="nationality" >Україна/Ukr</textarea>
+
+<textarea rows="1" readonly class="doc_number" id="doc_number"></textarea>
+
+
+
+
+</div>
+
+	<div class="back"  id="back">
+
+</div>
+
+
+<div class="btns">
+<label id="f_ava"><input class="f_ava" type="checkbox" name="coupon_question" value="1" />Показать/Скрыть обратную сторону </label>
+</br>
+<p>Введите данные</p>
+<div class="inputs">
+<input id="surname" type="text" placeholder="Фамилия"/>
+<input id="name" type="text" placeholder="Имя"/>
+<br>
+<input id="bir_date" type="text" placeholder="Дата рождения" style="margin-top: 2%;"/>
+
+</div>
+<p>Фото</p>
+<input type='file' name="browser" id='file' />
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<script src="./js/copy.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/switch.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/translate.js"></script>
+</body>
+</html>
