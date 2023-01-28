@@ -12,10 +12,26 @@
 <body>
 <div class="main">
 
+<div class="btns">
+<label id="f_ava"><input class="f_ava" type="checkbox" name="coupon_question" value="1" />Показать/Скрыть обратную сторону </label>&nbsp;&nbsp;
+<div class="inputs">
+<input id="surname" type="text" placeholder="Фамилия"/>
+<input id="name" type="text" placeholder="Имя"/>
+<input id="middle" type="text" placeholder="Отчество"/>
+<input id="bir_date" type="text" placeholder="Дата рождения" />
+</div>&nbsp;&nbsp;
+
+<input type='file' name="browser" id='file' />
+</div>
+</br></br>
 
 	<div class="front"  id="front">
 	<div class="ava">
 	<img src='./img/ava.png' id="preview" />
+	</div>
+	
+	<div class="golo">
+	<IMG SRC="img\golo.png">
 	</div>
 	
 	<div class="paste_inputs">
@@ -26,39 +42,41 @@
 <textarea rows="1" readonly class="en_paste_name" id="en_paste_name" name="en_paste_name" type="text" >Anna</textarea>
 
 <textarea rows="1" readonly class="paste_date" id="paste_date" name="paste_date" type="text" >06 07 1999</textarea>
-<textarea rows="1" readonly class="reverse_bir_date" id="reverse_bir_date" type="text">19990706-005</textarea>
+<span class="reverse_bir_date" id="reverse_bir_date">19990706-15568</span>
 </div>
 <div id="expiry"></div>
-<div id="middle_name"></div>	
-<textarea  rows="1"  readonly class="sex" id="f" >Ж/F</textarea>	
+<textarea rows="1" id="middle_name">Юріївна</textarea>	
+<textarea  rows="1"  class="sex" id="f" >Ж/F</textarea>	
 <textarea  rows="1" readonly class="nationality" >Україна/Ukr</textarea>
 
 <textarea rows="1" readonly class="doc_number" id="doc_number"></textarea>
 
-
-
-
 </div>
 
 	<div class="back"  id="back">
-
+<textarea rows="1" readonly class="issue" id="issue" name="issue" type="text" ></textarea>
+<textarea rows="1" readonly class="authority" id="authority" name="authority" type="text" ></textarea>
+<textarea rows="1" readonly class="inn" id="inn" name="inn" type="text" ></textarea>
+<span rows="3" class="city" id="city" ></span>
+<div class="ava_back">
+	<img src='./img/ava.png' id="preview_back" />
+	</div>
+	<div class="result">
+	<span class="id_ukr_doc_number" id="id_ukr_doc_number"></span>
+	<span dir='rtl' class="id_ukr_doc_number" id="id_ukr_doc_number1"></span>
+	<span id="rand_num"></span>
+	</br>
+	<span id="second_line"></span>
+	</br>
+	<span id="third_line"></span>
+	
+	
+</div><div class="year">
+<span dir='rtl' id="year"></span></div>
 </div>
 
 
-<div class="btns">
-<label id="f_ava"><input class="f_ava" type="checkbox" name="coupon_question" value="1" />Показать/Скрыть обратную сторону </label>
-</br>
-<p>Введите данные</p>
-<div class="inputs">
-<input id="surname" type="text" placeholder="Фамилия"/>
-<input id="name" type="text" placeholder="Имя"/>
-<br>
-<input id="bir_date" type="text" placeholder="Дата рождения" style="margin-top: 2%;"/>
 
-</div>
-<p>Фото</p>
-<input type='file' name="browser" id='file' />
-</div>
 
 
 

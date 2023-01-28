@@ -36,33 +36,106 @@ var myExpiry = new Array(
 '<textarea rows="1" readonly class="expiry">21 08 2023</textarea>',
 '<textarea rows="1" readonly class="expiry">22 10 2029</textarea>'
                       );
-randnm=Math.round(Math.random()*(myExpiry.length-1));
-document.getElementById("expiry").innerHTML = myExpiry[randnm];
+randnm1=Math.round(Math.random()*(myExpiry.length-1));
+document.getElementById("expiry").innerHTML = myExpiry[randnm1];
 
-
-
-var myMiddle = new Array(
-'<textarea class="middle_name" rows="1" readonly >Олександрівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Олегівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Максимівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Дмитрівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Павлівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Владиславівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Володимирівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Сергіївна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Євгенівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Юріївна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Олексіївна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Ілівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Іванівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Василівна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Віталіївна</textarea>',
-'<textarea class="middle_name" rows="1" readonly >Петрівна</textarea>'
+var myIssue = new Array(
+'11 01 2021',
+'20 12 2021',
+'23 09 2021',
+'29 03 2020',
+'05 11 2019',
+'04 05 2019',
+'01 11 2022',
+'25 01 2019',
+'19 02 2022',
+'23 11 2022',
+'19 12 2022',
+'19 09 2018',
+'24 09 2021',
+'13 05 2020',
+'19 06 2019'
                                            );
-randnm=Math.round(Math.random()*(myMiddle.length-1));
+randnm3=Math.round(Math.random()*(myIssue.length-1));
+document.getElementById('issue').innerHTML = myIssue[randnm3];
 
-document.getElementById("middle_name").innerHTML = myMiddle[randnm];
+var randomNumber2 = Math.floor((Math.random() * 8888) + 1000);
+document.getElementById("authority").innerHTML = randomNumber2;
+
+var randomNumber3 = Math.floor((Math.random() * 8888888888) + 1000000000);
+document.getElementById("inn").innerHTML = randomNumber3;
+
+var myCity = new Array(
+'м. дніпропетровськ дніпропетровська область</br> україна/m. dnipropetrovsk dnipropetrovska oblast</br>ukraina/ukr',
+'м. київ київська область</br> україна/m. kyiv kyivska oblast</br>ukraina/ukr',
+'м. черкаси черкаська область</br> україна/m. cherkasy chrkaska oblast</br>ukraina/ukr',
+'м. чернігів чергінівська область</br> україна/m.chernigiv chernigivska  oblast</br>ukraina/ukr',
+'м. харків харківська область</br> україна/m. khakiv kharkivska oblast</br>ukraina/ukr',
+'м. херсон херсонська область</br> україна/m. kherson khersonska oblast</br>ukraina/ukr',
+'м. житомир житомирська область</br> україна/m. zhytomyr zhytomyrska oblast</br>ukraina/ukr'
+                                           );
+randnm4=Math.round(Math.random()*(myCity.length-1));
+
+document.getElementById('city').innerHTML = myCity[randnm4];
 
 oo = "00";
+id_ukr = "IDUKR";
+four = "4";
+
+
 var randomNumber = Math.floor((Math.random() * 8888888) + 1000000);
 document.getElementById("doc_number").innerHTML = oo + randomNumber;
+document.getElementById("id_ukr_doc_number").innerHTML = id_ukr + oo + randomNumber + four;
+
+
+var randomNumber1 = Math.floor((Math.random() * 88888) + 10000);
+document.getElementById("rand_num").innerHTML = randomNumber1+ "<<";
+
+
+ 
+  var bir_date = document.getElementById('bir_date');
+  var en_paste_surname = document.getElementById('en_paste_surname');
+    var en_paste_name = document.getElementById('en_paste_name');
+      var middle = document.getElementById('middle');
+	  
+var id_ukr_doc_number1 = document.getElementById('id_ukr_doc_number1');
+var reverse_bir_date = document.getElementById('reverse_bir_date');
+var third_line = document.getElementById('third_line');
+
+
+var result3 = document.getElementById('year');
+var middle_name = document.getElementById('middle_name');
+function updateResult() {
+
+	third_line.textContent = en_paste_surname.value+"<<" + en_paste_name.value+"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+    result3.textContent = bir_date.value ;
+    result3.textContent = result3.textContent.replace('.', ' ');
+	result3.textContent = result3.textContent.replace('.', ' ');
+	result3.textContent = result3.textContent.replace(',', ' ');
+	result3.textContent = result3.textContent.replace(',', ' ');
+	
+	middle_name.textContent = middle.value ;
+	
+    id_ukr_doc_number1.textContent = bir_date.value ;
+	id_ukr_doc_number1.textContent = id_ukr_doc_number1.textContent.replace('.', ' ');
+	id_ukr_doc_number1.textContent = id_ukr_doc_number1.textContent.replace('.', ' ');
+	id_ukr_doc_number1.textContent = id_ukr_doc_number1.textContent.replace(',', ' ');
+	id_ukr_doc_number1.textContent = id_ukr_doc_number1.textContent.replace(',', ' ');
+	
+	reverse_bir_date.textContent = randomNumber1 + "-" + " " +  bir_date.value;
+	reverse_bir_date.textContent = reverse_bir_date.textContent.replace('.', ' ');
+	reverse_bir_date.textContent = reverse_bir_date.textContent.replace('.', ' ');
+	reverse_bir_date.textContent = reverse_bir_date.textContent.replace(',', ' ');
+	reverse_bir_date.textContent = reverse_bir_date.textContent.replace(',', ' ');
+	
+	
+	
+}
+
+bir_date.addEventListener('keyup', updateResult);
+  en_paste_surname.addEventListener('keyup', updateResult);
+  en_paste_name.addEventListener('keyup', updateResult);
+  middle.addEventListener('keyup', updateResult);
+  
+  var randomNumber2 = Math.floor((Math.random() * 8888888) + 1000000);
+document.getElementById("second_line").innerHTML = randomNumber2 + "M" + randomNumber + "UKR" + "<<<<<<<<<<<<8";

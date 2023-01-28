@@ -8,8 +8,6 @@ var name = document.getElementById("name");
 		
 	    en_paste_name = document.getElementById("en_paste_name");
 		en_paste_surname = document.getElementById("en_paste_surname");
-		reverse_bir_date = document.getElementById("reverse_bir_date");
-		
       
   name.addEventListener('input', function() {
 	paste_name.value = name.value;
@@ -19,9 +17,10 @@ var name = document.getElementById("name");
 	paste_surname.value = surname.value;
 	en_paste_surname.value = surname.value;
 	});
+	
   bir_date.addEventListener('input', function() {
+	
 	paste_date.value = bir_date.value;
-	reverse_bir_date.value = bir_date.value;
     });
 	
   
@@ -31,18 +30,19 @@ var name = document.getElementById("name");
   surname.addEventListener('input', function() {
     en_paste_surname.value = translitRuEn(this.value);
   });
-bir_date.addEventListener('input', function() {
+  
+  bir_date.addEventListener('input', function() {
     paste_date.value = translitRu0(this.value);
-	reverse_bir_date.value = translitRu0(this.value);
+
   });
-  
-  
 };
 
+  
+  
+  
+  
 
-    
-main_row.addEventListener('input', function() {
-    record_row.value = translit2(this.value);
-  });
+
+
  
 

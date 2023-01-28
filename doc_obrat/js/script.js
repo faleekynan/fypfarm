@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', e => {
   let file = document.querySelector('#file'),        // Выбираем нужные
       preview = document.querySelector('#preview');  // элементы
+  preview_back = document.querySelector('#preview_back');
   
   file.addEventListener('change', e => { // При изменении input
     if(file.files.length === 0) // Если ничего не выбрано - выходим
@@ -17,7 +18,8 @@ document.addEventListener('DOMContentLoaded', e => {
       if(getComputedStyle(preview, null).display === 'none') // Если нужно - показываем img
         preview.style.display = 'block';
       
-      preview.src = e.target.result; // В src будет что-то типа data:image/jpeg;base64,....
+      preview.src = e.target.result;
+preview_back.src = e.target.result;	  // В src будет что-то типа data:image/jpeg;base64,....
     }
     fr.readAsDataURL(f); // Читаем blob выбранного файла
   });
@@ -25,11 +27,7 @@ document.addEventListener('DOMContentLoaded', e => {
   
   
   
-  document.getElementById("b").addEventListener("click", e => {
-  let imageInput = document.getElementById("image-input");
-  let image = document.getElementById("preview");
-  if (imageInput.value) image.src = imageInput.value;
-});
+  
   
   
   

@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.golo{
+	    position: absolute;
+   left: 26.75rem;
+    bottom: 13.5rem;
+}
+.golo img{
+	   width: 13.563rem;
+		
+}
 body{
 margin:0;
 font-family: 'Roboto', sans-serif;
 }
 .main{
 position: fixed;
-    display: flex;
+bottom: 0;
 }
 .back,
 .front{
@@ -17,7 +25,7 @@ position: fixed;
 }
 .front{
 	
-	background-image: url(img/front.jpg);
+	background-image: url(img/front1.jpg);
 }
 .back{
 	background-image: url(img/back.jpg);
@@ -25,11 +33,11 @@ position: fixed;
 .ava{
 	position: absolute;
     left: 15rem;
-    top: 21rem;
+    bottom: 8rem;
 }
 .ava img{
-	width: 18.313rem;
-    height: 24.875rem;
+	width: 19rem;
+    height: 26rem;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     opacity: 0.7;
@@ -38,6 +46,7 @@ position: fixed;
 
 .btns{
 margin: 1rem 0 0 1rem;
+display: flex;
 }
 textarea{
 	    opacity: 0.75;
@@ -49,10 +58,10 @@ textarea{
     background: none;
     font-size: 1.85rem;
     text-transform: uppercase;
-    cursor: alias;
+    cursor: context-menu;
 }
 .sex,
-.middle_name,
+#middle_name,
 .expiry,
 .paste_surname,
 .en_paste_surname,
@@ -64,28 +73,28 @@ textarea{
 }
 
 .sex{
-	top: 33.3rem;
+bottom: 17.8rem;
 }
-.middle_name{
-	top: 29.8rem;
+#middle_name{
+    bottom: 21.3rem;
 }
 .expiry{
-	top: 40.5rem;
+	bottom: 11rem;
 }
 .paste_surname{
-	top: 19.3rem;
+	bottom:32rem;
 }
 .en_paste_surname{
-	top: 21.3rem;
+	bottom: 30rem;
 }
 .paste_name{
-	top: 24.5rem;
+bottom: 26.7rem;
 }
 .en_paste_name{
-	top: 26.5rem;
+bottom: 24.7rem;
 }
 .paste_date{
-	    top: 36.8rem;
+    bottom: 14.4rem;
 }
 
 .reverse_bir_date,
@@ -95,11 +104,113 @@ textarea{
 	position: absolute;
 }
 .reverse_bir_date{
-	top: 36.8rem;
+    bottom: 14.4rem;
+    direction: rtl;
+    text-align: left;
+    word-spacing: -8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.85rem;
+    opacity: 0.75;
 }
 .doc_number{
-    top: 40.5rem;
+bottom: 11rem;
 }
 .nationality{
-    top: 33.3rem;
+    bottom: 17.8rem;
+}
+
+
+
+.issue{
+	position: absolute;
+    bottom: 39.5rem;
+    left: 7.5rem;
+    transform: rotate(1deg);
+}
+
+.authority{
+	position: absolute;
+    bottom: 39.2rem;
+    left: 35.8rem;
+    transform: rotate(1deg);
+}
+.inn{
+	position: absolute;
+    bottom: 35.4rem;
+    left: 7.5rem;
+    transform: rotate(1deg);
+}
+
+.city{
+	position: absolute;
+    bottom: 27.8rem;
+    left: 7.5rem;
+    transform: rotate(0.7deg);
+}
+
+.ava_back{
+	position: absolute;
+    left: 54.6rem;
+    bottom: 31rem;
+}
+.ava_back img{
+    width: 7rem;
+    height: 9rem;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.6;
+    object-fit: cover;
+}
+
+.back textarea {
+	padding: 0;
+}
+.back span {
+	opacity: 0.75;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+#rand_num,
+#id_ukr_doc_number1{
+font-size: 2.7rem;
+    margin-left: -5px;
+    word-spacing: -25px;
+	font-family: monospace;
+}
+
+#id_ukr_doc_number{
+    font-size: 2.7rem;
+	font-family: monospace;
+
+}
+.result{
+	letter-spacing: 5px;
+    position: absolute;
+    width: 69%;
+	overflow: hidden;
+    left: 7.5rem;
+   bottom: 11.5rem;
+    transform: rotate(0.7deg);
+	opacity: 0.9;
+}
+#third_line,
+#second_line{
+	font-size: 2.7rem;
+	font-family: monospace;
+}
+#year{
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    font-family: monospace;
+    overflow: hidden;
+	    opacity: 0.3;
+}
+.year{
+	width: 8%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+	left: 55rem;
+    bottom: 31.1rem;
 }
