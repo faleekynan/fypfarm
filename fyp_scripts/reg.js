@@ -41,10 +41,9 @@ document.getElementById('year').value = val_year;
 
 
 
-var sex = document.evaluate ('/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[1]/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-sex.singleNodeValue.click();
+$('label:contains("жінка")')[0].click();
 
-var reg = document.evaluate ('/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[11]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+var reg = document.evaluate ('/html/body/div[4]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[11]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
 reg.singleNodeValue.click();
 
 

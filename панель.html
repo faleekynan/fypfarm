@@ -88,15 +88,41 @@ padding-right:30px;
 	  .friends a:hover{
 	  background: transparent !important;
 	  }
+	  #pzrd{
+max-width: 670px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 0 0 1px 0 rgb(0 0 0 / 10%);
+    border-left-style: solid;
+    border-left-color: rgba(0,126,89,1);
+    border-left-width: 4px;
+	font-weight: 500;
+	line-height: 1.42858!important;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol!important;
+	color: rgba(28,43,51,1);
+	font-size: .875rem!important;
+	margin-top: 24px;
+}
+.first_line{
+padding:12px;
+position:relative;
+}
+
+.second_line{
+    padding-left: 38px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    font-weight: 400;
+    line-height: 1.42858!important;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol!important;
+    color: rgba(28,43,51,1);
+    font-size: .875rem!important;
+}
 </style>
 <div id="main" class="menu-wrap">
 	<ul>
-	<li><a>Плашка ЗРД</a>
-			<ul>
-				<li><a onclick="myNew()">Новый дизайн</a></li>
-				<li><a onclick="myOld()">Старый дизайн</a></li>
-			</ul>
-		</li>
+<li><a onclick="myNew()">Плашка ПЗРД</a></li>
+				
 <li><a onclick="mySearch()">Поисковый запрос</a></li>
 <li><a onclick="myQuote()">Случайная цитата</a></li>
 <li><a onclick="myFpname()">Название ФП</a></li>
@@ -110,9 +136,10 @@ padding-right:30px;
 	</ul>
   </div>
 <script>
-function myNew() {
-var sex = document.evaluate ("/html/body/div[1]/div[1]/div/div/div/div[2]/div/div[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-sex.singleNodeValue.innerHTML = `<div style="margin-top: -24px;margin-bottom: -24px;"><div class="xeuugli x2lwn1j x6s0dn4 x78zum5 x1qughib xh8yej3 xqui205 x1hq5gj4"><div class="xeuugli x2lwn1j x78zum5 x2lah0s"><span aria-level="1" class="x1xqt7ti x1ldc4aq x1cgboj8 xbsr9hj xq9mrsl x1h4wwuj x117nqv4 xeuugli" role="heading">Facebook account</span></div><div class="xeuugli x2lwn1j x78zum5"></div></div><div style="max-width: 673px;" class="x78zum5 x9f619 x1n2onr6 x26u7qi x7g060r xa05pge x16p5pjb x1anald3 xgi1ddd x1ye3gou xn6708d x1lcm9me x1yr5g0i xrt01vj x10y3i5r x1kmqopl xz9dl7a xsag5q8 x1gzqxud x1yztbdb"><div class="xmi5d70 x1fvot60 xo1l8bm xxio538 xbsr9hj xq9mrsl x1yc453h x1h4wwuj xeuugli x1iyjqo2 xs83m0k"><div class="xeuugli x2lwn1j x1qjc9v5 x78zum5 xdt5ytf x1iyjqo2 xozqiw3 xavht8x"><div class="xeuugli x2lwn1j x1cy8zhl x78zum5 x1q0g3np x1iyjqo2 xozqiw3 x19lwn94"><div class="x1c4vz4f x2lah0s"><div class="xmi5d70 x1fvot60 xxio538 xbsr9hj xq9mrsl x1h4wwuj x1fcty0u x78zum5 xl56j7k x6s0dn4"><span>​</span><div class="xjm9jq1 x78zum5 xl56j7k x6s0dn4"><div class="x3nfvp2 x120ccyz xs7e29d" role="presentation"><div class="xtwfq29" style="width: 16px; height: 16px; -webkit-mask-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/IoiLuAdtt_w.png&quot;); -webkit-mask-position: -17px -568px;"></div></div></div></div></div><div class="x1iyjqo2 xeuugli x3nfvp2"><div aria-level="4" class="xmi5d70 x1fvot60 xk50ysn xxio538 xbsr9hj xq9mrsl x1yc453h x1h4wwuj xeuugli" role="heading">Advertising Access Reinstated</div></div><div class="x9otpla x1wsgfga x1n0m28w"></div></div><div class="x1n2onr6 x1iyjqo2 xs83m0k xmupa6y"><div class="xeuugli x2lwn1j x1cy8zhl x78zum5 x1q0g3np x1iyjqo2 xozqiw3 x19lwn94"><div class="xeuugli x2lwn1j x1cy8zhl x78zum5 xdt5ytf x1iyjqo2 xozqiw3 xavht8x"><span class="xmi5d70 x1fvot60 xo1l8bm xxio538 xbsr9hj xq9mrsl x1h4wwuj xeuugli">After a requested review of your Facebook account, we determined that access to advertising was incorrectly restricted. Your ads, personal ad accounts and other affected advertising assets will return to their previous status. We apologize for the inconvenience.</span></div></div></div></div></div></div></div>`;}
+function myNew() {var code = `<div id="pzrd"><div class="first_line" ><span style="position: absolute;left: 17px;top: 15px;font-size: 10px;">&#10003;</span><span style="font-size: 16px;margin-right: 10px;">&#9711;</span>Advertising Access Reinstated</div><div class="second_line">Thank you for confirming your identity. You can now advertise. Your ads, personal ad account and other affected advertising assets will return to their previous status.</div></div>`;
+$('span:contains("Account Overview")').remove();
+$('span:contains("/")').remove();
+$('span:contains("Facebook account")').append(code);}
 
 function myBm() {(function(d) {let length = 10;let fb_dtsg = require("DTSGInitialData").token;console.log(fb_dtsg);let user_id = require("CurrentUserInitialData").ACCOUNT_ID;console.log(user_id);for (var i = 0; i < length; i++) {fetch("https://business.facebook.com/business/create_account", {body: `brand_name=My Newbm ${i + Math.random().toString(36).substring(2)}&first_name=Barbara&last_name=Streisand&email=${Math.random().toString(36).substring(2)}@gmail.com&timezone_id=233&business_category=OTHER&city= &country=&state=&legal_name=&phone_number=&postal_code=&street1=&street2=&website_url= &is_b2b=false&__a=1&fb_dtsg=${fb_dtsg}`,method: "POST",headers: {"Content-Type": "application/x-www-form-urlencoded"},credentials: "include",}).then(e => e.text()).then(e => {});}})(document);alert("Проверь создался ли БМ, если нет - попробуй еще раз!!!");}
 
