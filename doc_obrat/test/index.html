@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Дизельный генератор - by FYP</title>
+  
+ 
+<link rel="stylesheet" href="./style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+</head>
+<body>
+<div class="main">
+
+<div class="btns">
+<label id="f_ava"><input class="f_ava" type="checkbox" name="coupon_question" value="1" />Показать/Скрыть обратную сторону </label>&nbsp;&nbsp;
+<div class="inputs">
+<input id="surname" type="text" placeholder="Фамилия"/>
+<input id="name" type="text" placeholder="Имя"/>
+<input id="middle" type="text" placeholder="Отчество"/>
+<input id="bir_date" type="text" placeholder="Дата рождения" />
+</div>&nbsp;&nbsp;
+
+<input type='file' name="browser" id='file' />
+</div>
+</br></br>
+
+	<div class="front"  id="front">
+	<div class="ava">
+	<img src='./img/ava.png' id="preview" />
+	</div>
+	
+	<div class="golo">
+	<IMG SRC="img\golo.png">
+	</div>
+	
+	<div class="paste_inputs">
+<textarea rows="1" readonly class="paste_surname" id="paste_surname" name="paste_surname" type="text" >Бойко</textarea>
+<textarea rows="1" readonly class="en_paste_surname" id="en_paste_surname" name="en_paste_surname" type="text" >Boyko</textarea>
+
+<textarea rows="1" readonly class="paste_name" id="paste_name" name="paste_name" type="text" >Анна</textarea>
+<textarea rows="1" readonly class="en_paste_name" id="en_paste_name" name="en_paste_name" type="text" >Anna</textarea>
+
+<textarea rows="1" readonly class="paste_date" id="paste_date" name="paste_date" type="text" >06 07 1999</textarea>
+<span class="reverse_bir_date" id="reverse_bir_date">19990706-15568</span>
+</div>
+<div id="expiry"></div>
+<textarea rows="1" id="middle_name">Юріївна</textarea>	
+<textarea  rows="1"  class="sex" id="f" >Ж/F</textarea>	
+
+<textarea rows="1" readonly class="doc_number" id="doc_number"></textarea>
+<div id="signe"></div>
+</div>
+
+	<div class="back"  id="back">
+<textarea rows="1" readonly class="issue" id="issue" name="issue" type="text" ></textarea>
+<textarea rows="1" readonly class="authority" id="authority" name="authority" type="text" ></textarea>
+<textarea rows="1" readonly class="inn" id="inn" name="inn" type="text" ></textarea>
+<span rows="3" class="city" id="city" ></span>
+<div class="ava_back">
+	<img src='./img/ava.png' id="preview_back" />
+	</div>
+	<div class="result">
+	<span class="id_ukr_doc_number" id="id_ukr_doc_number"></span>
+	<span dir='rtl' class="id_ukr_doc_number" id="id_ukr_doc_number1"></span>
+	<span id="rand_num"></span>
+	</br>
+	<span id="second_line"></span>
+	</br>
+	<span id="third_line"></span>
+	
+	
+</div><div class="year">
+<span dir='rtl' id="year"></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script src="./js/copy.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/switch.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/translate.js"></script>
+</body>
+</html>

@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "FYP Scripts",
-  "version": "0.7",
-  "description": "",
+  "name": "Jquery Enabler by Rofloroom",
+  "version": "0.1",
+  "description": "Подключение библиотеки jQuery в сайтах, где она отсутствует",
   "permissions": [
     "tabs", "http://*/", "https://*/"
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.facebook.com/*","https://business.facebook.com/*"],
+      "matches": ["http://*/*","https://*/*"],
       "js": ["/jquery-3.6.1.min.js", "main.js"],
       "run_at": "document_end",
       "all_frames": true

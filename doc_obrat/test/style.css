@@ -1,0 +1,227 @@
+.golo{
+    position: absolute;
+    left: 23.75rem;
+    bottom: 14.2rem;
+
+}
+.golo img{
+	   width: 11.963rem;
+		
+}
+body{
+margin:0;
+font-family: 'Roboto', sans-serif;
+}
+.main{
+position: fixed;
+bottom: 0;
+}
+.back,
+.front{
+
+    background-size: contain;
+    height: 53.563rem;
+    width: 80rem;
+    background-repeat: no-repeat;
+}
+.front{
+	
+	background-image: url(img/front.jpg);
+}
+.back{
+	background-image: url(img/back.jpg);
+}
+.ava{
+	position: absolute;
+    left: 13rem;
+    bottom: 8.5rem;
+
+}
+.ava img{
+	width: 17rem;
+    height: 23rem;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.6;
+    object-fit: cover;
+}
+
+.btns{
+margin: 1rem 0 0 1rem;
+display: flex;
+}
+textarea{
+	    opacity: 0.65;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    background: none;
+    font-size: 1.65rem;
+    text-transform: uppercase;
+    cursor: context-menu;
+}
+.sex,
+#middle_name,
+.expiry,
+.paste_surname,
+.en_paste_surname,
+.paste_name,
+.en_paste_name,
+.paste_date{
+	position: absolute;
+    left: 31.7rem;
+}
+
+.sex{
+bottom: 17.8rem;
+}
+#middle_name{
+    bottom: 20.7rem;
+}
+.expiry{
+	bottom: 11.5rem;
+}
+.paste_surname{
+	bottom:30.5rem;
+	left: 31.5rem;
+}
+.en_paste_surname{
+	bottom: 28.5rem;
+	left: 31.5rem;
+}
+.paste_name{
+bottom: 25.7rem;
+}
+.en_paste_name{
+bottom: 23.8rem;
+}
+.paste_date{
+    bottom: 14.7rem;
+}
+
+.reverse_bir_date,
+.doc_number,
+.nationality{
+	left: 45.4rem;
+	position: absolute;
+}
+.reverse_bir_date{
+    bottom: 14.9rem;
+    direction: rtl;
+    text-align: left;
+    word-spacing: -8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.65rem;
+    opacity: 0.65;
+}
+.doc_number{
+bottom: 11.5rem;
+}
+.nationality{
+    bottom: 17.8rem;
+}
+
+
+
+.issue{
+position: absolute;
+    bottom: 34.2rem;
+    left: 15rem;
+    transform: rotate(1deg);
+}
+
+.authority{
+position: absolute;
+    bottom: 34rem;
+    left: 36.2rem;
+    transform: rotate(1deg);
+}
+.inn{
+    position: absolute;
+    bottom: 31rem;
+    left: 15rem;
+    transform: rotate(1deg);
+}
+
+.city{
+position: absolute;
+    bottom: 25.5rem;
+    left: 15rem;
+    transform: rotate(0.7deg);
+}
+
+.ava_back{
+position: absolute;
+    left: 50.1rem;
+    bottom: 28.1rem;
+}
+.ava_back img{
+width: 5rem;
+    height: 7rem;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.6;
+    object-fit: cover;
+}
+
+.back textarea {
+	padding: 0;
+}
+.back span {
+	opacity: 0.75;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+#rand_num,
+#id_ukr_doc_number1{
+font-size: 1.9rem;
+    margin-left: -10px;
+    word-spacing: -25px;
+	font-family: monospace;
+}
+
+#id_ukr_doc_number{
+    font-size: 1.9rem;
+	font-family: monospace;
+
+}
+.result{
+letter-spacing: 5px;
+    position: absolute;
+    width: 52%;
+    overflow: hidden;
+    left: 14.5rem;
+    bottom: 13.5rem;
+    transform: rotate(0.3deg);
+    opacity: 0.9;
+}
+#third_line,
+#second_line{
+	font-size: 1.9rem;
+	font-family: monospace;
+}
+#year{
+font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-family: monospace;
+    overflow: hidden;
+    opacity: 0.3;
+}
+.year{
+width: 6%;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    left: 50.5rem;
+    bottom: 28.5rem;
+}
+.items{
+	width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 38rem;
+    bottom: 6rem;
+}
