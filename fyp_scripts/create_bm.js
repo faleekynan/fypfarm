@@ -10,13 +10,13 @@ let user_id = require('CurrentUserInitialData').ACCOUNT_ID;
 
 console.log(user_id);
 
-for (var i = 0; i < length; i++) {
 
+test = prompt("Вставь почту");
+namebm = Math.random().toString(36).slice(2) +Math.random().toString(36).toUpperCase().slice(2);
 fetch('https://business.facebook.com/business/create_account', {
 	
-	mail = prompt("Почта");
 
-body: `brand_name=My Newbm ${i + Math.random().toString(36).substring(2)}&first_name=Barbara&last_name=Streisand&email=mail&timezone_id=233&business_category=OTHER&city= &country=&state=&legal_name=&phone_number=&postal_code=&street1=&street2=&website_url= &is_b2b=false&__a=1&fb_dtsg=${fb_dtsg}`,
+body: `brand_name=${namebm}&first_name=Barbra &last_name=Streisand&email=${test}&timezone_id=233&business_category=OTHER&city= &country=&state=&legal_name=&phone_number=&postal_code=&street1=&street2=&website_url= &is_b2b=false&__a=1&fb_dtsg=${fb_dtsg}`,
 
 method: 'POST',
 
@@ -32,7 +32,7 @@ credentials: 'include',
 
 });
 
-}
+
 
 })(document);
 

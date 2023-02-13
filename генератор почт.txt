@@ -1,0 +1,11 @@
+var interval = setInterval(function(){
+document.querySelector("#root > div > div > div.content > div > div.edit-item > form > div.r-1 > div.c-1 > div:nth-child(3) > label > button").click();
+pass = document.querySelector("#password_undefined").value;
+login = document.querySelector("#account").value = "1102" + pass;
+
+
+document.querySelector("#root > div > div > div.content > div > div.edit-item > form > div.buttons-wrapper > button.add").click();
+console.log(login + "@fyp-mail.xyz" + ":" + pass);
+}, 1000);
+
+setTimeout(function(){clearInterval(interval);}, 1000000);
