@@ -57,7 +57,6 @@ transform: translate(-50%, 0);
       cursor: pointer;
 	  position: relative;
 }
-#scripts button:hover,
 #scripts span:hover{
   background:#1877F2;
   color:white;
@@ -70,21 +69,12 @@ padding: 4px;
     font-family: system-ui !important;
     font-size: 1rem !important;
 }
-#scripts button {
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-	font-size: 0.8rem;
-    font-family: system-ui !important;
-    font-weight: 500;
-	width: 30%;
-}
 #add_codes,
 #add_mail,
 #other,
 #shops,
-#create_bm,
-#friend_btn{
+#create_bm
+{
 display:none;
 }
 #dropdown::before{
@@ -105,22 +95,16 @@ border: none;
 width: 50%;
 height: 1px;
 background: #ddd;
+margin: 0.8rem auto;
 }
 </style>
 
 <div id="scripts">
 <span onclick="mySearch()">Поисковый запрос</span>
 <span onclick="myQuote()">Скопировать цитату</span>
-<hr>
-<span id="dropdown" onclick="myFriends()">Добавить друзей</span>
-<div id="friend_btn">
-<button onclick="myFriends1()">25шт</button>
-<button onclick="myFriends2()" style="margin: 0 5%;">50шт</button>
-<button onclick="myFriends3()">75шт</button>
-</div>
+<span onclick="myFriends()">Добавить друзей</span>
 <hr>
 <span onclick="myFpname()">Название ФП</span>
-<span onclick="myPzrd()">Плашка ПЗРД</span>
 <span onclick="myBm()">Создать БМ</span>
 <span id="dropdown" onclick="myAddmail()">Привязка почты</span>
 <div id="add_mail">
@@ -142,6 +126,7 @@ background: #ddd;
 <hr>
 <span id="dropdown" onclick="myOther()">Разное</span>
 <div id="other">
+<span onclick="myPzrd()">Плашка ПЗРД</span>
 <span onclick="mySelfie()">Женское селфи</span>
 <span onclick="myPass()">Создать пароль</span>
 <span onclick="myInterests()">Интересы</span>
@@ -154,7 +139,6 @@ background: #ddd;
 </div>
 
 <script>
-function myFriends() {var x = document.getElementById("friend_btn");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
 function myShops() {var x = document.getElementById("shops");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
 function myOther() {var x = document.getElementById("other");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
 function myAddmail() {var x = document.getElementById("add_mail");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
@@ -164,9 +148,14 @@ function myCodes() {var x = document.getElementById("add_codes");if (x.style.dis
 function mySearch() {var myTxt=["курсы английского языка онлайн","детская стоматология киев","текстиль","горный туризм","макияж киев","маникюр дизайны","женские прически","мебель на заказ","спортивные костюмы","бизнес стратегия","купить недвижимость киев","недвижимость на кипре","ювелирные изделия","Конный спорт","Путешествия по Европе","Турагентство в Киеве","Лоты казино","Саморазвитие","Личностный рост","Инвестиции","Фитнес","Поиск инвестора","Бизнес для начинающих","Рулетка казино","Покер","Макияж","Финансирование","Спонсорство","Женская одежда","Женские часы","Дизайн интерьера","Занятия спортом","Самосовершенствование","Маганин одежды","Архитектура","Бизнес с нуля","Йога Киев","Танцы на пилоне","Фотограф Киев","Арт галерея Киев","Дрессировка животных Киев","Ландшафтный дизайн","Видео рецепты","Бассейн Киев","Театр на подоле","Катание на лыжах","Яхтинг","Стоматология","Туристическое агентство Киев","Рестораны Киева","Зоомагазин","Купить собаку Киев","Заказать кухню","Дизайнерский ремонт","студия дизайна интерьера","автосалон киев","Прогулки на катере Киев"];randnm=Math.round(Math.random()*(myTxt.length-1)); navigator.clipboard.writeText(myTxt[randnm]); var el = document.getElementById("scripts");el.remove();}
 function myQuote() {for(var matches,options,random,text="{You must be the change you wish to see in the world.|Life is either a daring adventure or nothing at all.|Life is a mixing of all kind of things: comedy and tragedy going together.|We are evolved to search for meaning but ultimately life has none.|Children havemore need of modelsthan critics.|May you live all the days of your life.|Life isnt about finding yourself. Life is about creating yourself.|Life is a succession of lessons which must be lived to be understood.|Never trust people who smile constantly. Theyre either selling something or not very bright.|The tragedy of life is what dies inside a man while he lives.|Our crisis is no longer material; its existential its spiritual. We have so much fucking stuff and so many opportunities that we dont even know what to give a fuck about anymore.|Life is neither good or evil but only a place for good and evil.|Try to enjoy the great festival of life with other men!|Life is beautiful because it doesnt last.|What a kid I got I told him about the birds and the bees and he told me about the butcher and my wife.|Relentlessly prune bullshit dont wait to do things that matter and savor the time you have. Thats what you do when life is short.|Life is a mixing of all kind of things: comedy and tragedy going together.|Life is a single player game.|I can resist everything except temptation.|Those who realize their folly are not true fools.|} {The trick in life is learning how to deal with it|The hardest thing to learn in life is which bridge to cross and which bridge to burn.|Women and cats will do as they please and men and dogs should relax and get used to the idea.|Dost thou love life? Then do not squander time for that is the stuff life is made of|Other things may change us but we start and end with the family.|See: its a never-ending upward spiral. And if you think at any point youre allowed to stop climbing Im afraid youre missing the point. Because the joy is in the climb itself.|Life is a continuous process of adjustment.|Its better to dance than to march through life.|If you want to live a happy life tie it to a goal not to people or things.|Dont gain the world and lose your soul wisdom is better than silver or gold|The good life is a process not a state of being. It is a direction not a destination.|We know what we are but know not what we may be|In the end its not the years in your life that count. Its the life in your years.|The more unintelligent a man is the less mysterious existence seems to him.|Its better to be a lion for a day than a sheep all your life.|The purpose of our lives is to be happy.|Your time is limited so dont waste it living someone elses life. Dont be trapped by dogma which is living with the results of other peoples thinking. Dont let the noise of others opinions drown out your own inner voice. And most important have the courage to follow your heart and intuition.|Life is to be lived not controlled and humanity is won by continuing to play in face of certain defeat.|Loving people live in a loving world. Hostile people live in a hostile world. Same world.|Life is to entered upon with courage.}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(text));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),text=text.replace(matches[0],options[random]);navigator.clipboard.writeText(text);var el = document.getElementById("scripts");el.remove();}
 
-function myFriends1() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 25000);var el = document.getElementById("scripts");el.remove();}
-function myFriends2() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 50000);var el = document.getElementById("scripts");el.remove();}
-function myFriends3() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 75000);var el = document.getElementById("scripts");el.remove();}
+function myFriends() {var interval = setInterval(function(){  
+window.scrollBy(0,100);
+$(`span:contains("Add Friend")`)[1].click();
+$(`span:contains("Add Friend")`)[1].remove();
+setTimeout(function(){$(`span:contains("OK")`)[1].click();
+}, 1000);  
+}, 1100);
+setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены");      }, 75000);var el = document.getElementById("scripts");el.remove();}
 
 function myFpname() {for(var matches,options,random,text="{Uthman|Lawrence|Immanuel|Nikko|Salvador|Josue|Pierce|Xever|Nick|Landen|Percy|Xayvion|Levi|Harold|Samir|Edison|Vinson|Milo|Xiomar|Yash|Finley|Forest|Xeno|Collin|Yakov|Leonidas|Ulric|Xun|Conor|Zeppelin|Francisco|Brentley|Conner|Dawson|Roberto|Quintrell|Hartley|Penn|Ryker|Raul|Kye|Shawn|Samir|Derek|Porter|Muhammad|Declan|Winston|Yeshua|Nehemiah|Emmitt|Tanner|Hugo|Quinto|Truman|Yunis|Gordon|Gideon|Grayson|Nikhil|Xandro|Raul|Jackson|Watson|Gunnar|Quent|Xandros|Zachary|Lionel|Leo|Dexter|Ethan|Raiden|Lucas|Harlow|Abel|Ximenez|Wylie|Xun|Neil|Collin|Owen|Angelo|Viktor|Neal|Luciano|Gentry|Nathanael|Manuel|River|Lionel|Grey|Yash|Grant|Pembroke|Asher|Chase|Viktor|Raul||Raul|Urbane|Ian|Leonardo|Osman|Armando|Quenton|Quint|Price|Jason|Israel|Osiris|Diego|Arthur|Otis|Matteo|Presleigh|Gentry|Foster|Uriah|Quentrell|Zachariah|Finlee|Vaughn|Keith|Nicolai|Charles|Finley|Xavier|Adonis|Edwin|Yakov|Kaleb|Lawson|Jace|Derrick|Christopher|Clayton|Colt|Xander|Hamza|Jorge|Ford|Percy|Andres|Jeffrey|Hartley|Omar|Lucas|Khalil|Theodore|Gianni|Guillermo|Victor|Xan|Roy|Ezra|Xenos|Uthman|Caiden|Declan|Vernen|Brentley|Thatcher|Ximenez|Nasir} {A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z} ",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(text));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),text=text.replace(matches[0],options[random]);navigator.clipboard.writeText(text);var el = document.getElementById("scripts");el.remove();}
 
@@ -185,13 +174,14 @@ function myZhuk(){window.open("https://zhuk.ua/checkout/");var el = document.get
 function myCopy(){
  code = document.getElementById("codes").value;
  navigator.clipboard.writeText(code);var el = document.getElementById("scripts");el.remove();}
- function mySelfie(){window.open("http://fyp-farm.biz/selfie/");var el = document.getElementById("scripts");el.remove();}
- function myInterests(){window.open("https://www.facebook.com/adpreferences/ad_topics");var el = document.getElementById("scripts");el.remove();}
- function myNumber(){window.open("https://www.facebook.com/settings/?tab=mobile");var el = document.getElementById("scripts");el.remove();}
- function myLanguage(){window.open("https://www.facebook.com/settings?tab=language");var el = document.getElementById("scripts");el.remove();}
+ 
+function mySelfie(){window.open("http://fyp-farm.biz/selfie/");var el = document.getElementById("scripts");el.remove();}
+function myInterests(){window.open("https://www.facebook.com/adpreferences/ad_topics");var el = document.getElementById("scripts");el.remove();}
+function myNumber(){window.open("https://www.facebook.com/settings/?tab=mobile");var el = document.getElementById("scripts");el.remove();}
+function myLanguage(){window.open("https://www.facebook.com/settings?tab=language");var el = document.getElementById("scripts");el.remove();}
  
  
- function makeid(length) {
+function makeid(length) {
     var result           = "";
     var characters       = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var charactersLength = characters.length;
