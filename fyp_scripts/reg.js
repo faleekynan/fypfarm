@@ -43,8 +43,7 @@ document.getElementById('year').value = val_year;
 
 $('label:contains("жінка")')[0].click();
 
-var reg = document.evaluate ('/html/body/div[4]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[11]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-reg.singleNodeValue.click();
+var reg = document.querySelector('button[name="websubmit"]').click();
 
 
 a = prompt("Скопировать данные?", phone+"\t"+    b+"\t"+    val_name+"\t"+    val_surname+"\t"+    val_day  + "." +  "0" +  val_month + "." + val_year);

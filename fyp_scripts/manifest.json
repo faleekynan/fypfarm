@@ -1,7 +1,7 @@
 {
   "name": "FYP Scripts",
   "description": "Полезные скрипты от FYP Farm",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 2,
   "permissions": [
     "contextMenus",

@@ -1,0 +1,345 @@
+<style>
+#pzrd{max-width: 670px;background: white;border-radius: 4px;box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 0 0 1px 0 rgb(0 0 0 / 10%);border-left-style: solid;border-left-color: rgba(0,126,89,1);border-left-width: 4px;font-weight: 500;line-height: 1.42858!important;font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol!important;color: rgba(28,43,51,1);font-size: .875rem!important;margin-top: 24px;}.first_line{padding:12px;position:relative;}.second_line{padding-left: 38px;padding-right: 12px;padding-bottom: 12px;font-weight: 400;line-height: 1.42858!important;font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol!important;color: rgba(28,43,51,1);font-size: .875rem!important;}
+
+
+
+#scripts{
+display: inline-block;
+text-align: left;
+line-height: 1;
+background: white;
+box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+font-family: system-ui !important;
+color: #202020;
+position: fixed;
+top: 0;
+left: 0;
+width: 1px;
+opacity:0;
+overflow:hidden;
+height: 100%;
+z-index: 9999999999999999;
+
+}
+#scripts:hover{
+width: 15rem;
+opacity:1;
+}
+#scripts span{
+font-weight: 500;
+    display: block;
+    font-size: 1rem;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+#scripts span:hover{
+  background:#eee;
+}
+#scripts input{
+padding: 4px;
+    border-radius: 6px;
+    text-align: left;
+    font-family: system-ui !important;
+    font-size: 1rem !important;
+    margin: 10px 30px;
+}
+#hide,
+#links,
+#add_shops,
+#add_friends,
+#add_codes,
+#add_mail,
+#other,
+#create_bm
+{
+display:none;
+}
+#dropdown::before,
+#single::before
+{
+position: absolute;
+left: 10px;
+}
+#dropdown::before{
+content:"=";
+line-height: 0.9;
+}
+#single::before{
+content:"#";
+line-height: 1;
+}
+#close{
+color: white;
+background: #E94B3C !important;
+}
+#close:hover{
+background: red !important;
+}
+hr{
+border: none;
+height: 1px;
+background: #ddd;
+}
+#add_friends{
+margin:0 30px;
+}
+#add_friends button{
+    width: 30%;
+    padding: 5px 0px;
+    margin-top: 10px;
+}
+
+</style>
+
+<div id="scripts">
+<span id="single" onclick="mySearch()">Поисковый запрос</span>
+<span id="single" onclick="myQuote()">Скопировать цитату</span>
+<span id="dropdown" onclick="myFriends()">Добавить друзей</span>
+<div id="add_friends">
+<button onclick="myFriends1()">30</button>
+<button onclick="myFriends2()">60</button>
+<button onclick="myFriends3()">100</button>
+</div>
+<hr>
+
+<span id="single" onclick="myFields()">Автозаполнение</span>
+<span id="single" onclick="myPixel()">ФБ пиксель</span>
+
+<hr>
+
+<span id="single" onclick="myBm()">Создать БМ</span>
+
+<span id="dropdown" onclick="myAddmail()">Привязка почты</span>
+<div id="add_mail">
+<input id="mail" placeholder="Вставь в меня почту"/>
+<span onclick="myMail()">Привязать</span>
+</div>
+<hr>
+
+<span id="dropdown" onclick="myShops()">Покупки</span>
+<div id="add_shops">
+<span onclick="myTrash()">Ananasko</span>
+<span onclick="myTrash()">Мамуля</span>
+<hr>
+</div>
+
+<span id="dropdown" onclick="myCodes()">Конвертер 2ФА</span>
+<div id="add_codes">
+<input id="codes" placeholder="Вставь коды"/>
+<span onclick="myCopy()">Скопировать</span>
+</div>
+<hr>
+
+<span id="dropdown" onclick="myOther()">Разное</span>
+<div id="other">
+<span onclick="myFpname()">Рандомное имя</span>
+<span onclick="myPzrd()">Плашка ПЗРД</span>
+<span onclick="myPass()">Создать пароль</span>
+<hr>
+</div>
+
+<span id="dropdown" onclick="myLinks()">Ссылки</span>
+<div id="links">
+<span onclick="myLink1()">Ананаско</span>
+<span onclick="myLink2()">Мамуля</span>
+<span onclick="myLink3()">Сайт для 2ФА</span>
+<span onclick="myLink4()">Почта</span>
+<hr>
+</div>
+
+
+</div>
+
+<script>
+
+var randomNumber = Math.floor((Math.random() * 1111111) + 8888888);
+for(var matches,options,random,quote="{You must be the change you wish to see in the world.|Life is either a daring adventure or nothing at all.|Life is a mixing of all kind of things: comedy and tragedy going together.|We are evolved to search for meaning but ultimately life has none.|Children havemore need of modelsthan critics.|May you live all the days of your life.|Life isnt about finding yourself. Life is about creating yourself.}{Life is a succession of lessons which must be lived to be understood.|Never trust people who smile constantly. Theyre either selling something or not very bright.|The tragedy of life is what dies inside a man while he lives.|Our crisis is no longer material; its existential its spiritual. We have so much fucking stuff and so many opportunities that we dont even know what to give a fuck about anymore.|Life is neither good or evil but only a place for good and evil.|Try to enjoy the great festival of life with other men!|Life is beautiful because it doesnt last.|}{What a kid I got I told him about the birds and the bees and he told me about the butcher and my wife.|Relentlessly prune bullshit dont wait to do things that matter and savor the time you have. Thats what you do when life is short.|Life is a mixing of all kind of things: comedy and tragedy going together.|Life is a single player game.|I can resist everything except temptation.|Those who realize their folly are not true fools.|}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(quote));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),quote=quote.replace(matches[0],options[random]);
+for(var matches,options,random,fpname="{Uthman|Lawrence|Immanuel|Nikko|Salvador|Josue|Pierce|Xever|Nick|Landen|Percy|Xayvion|Levi|Harold|Samir|Edison|Vinson|Milo|Xiomar|Yash|Finley|Forest|Xeno|Collin|Yakov|Leonidas|Ulric|Xun|Conor|Zeppelin|Francisco|Brentley|Conner|Dawson|Roberto|Quintrell|Hartley|Penn|Ryker|Raul|Kye|Shawn|Samir|Derek|Porter|Muhammad|Declan|Winston|Yeshua|Nehemiah|Emmitt|Tanner|Hugo|Quinto|Truman|Yunis|Gordon|Gideon|Grayson|Nikhil|Xandro|Raul|Jackson|Watson|Gunnar|Quent|Xandros|Zachary|Lionel|Leo|Dexter|Ethan|Raiden|Lucas|Harlow|Abel|Ximenez}_{A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z}{A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(fpname));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),fpname=fpname.replace(matches[0],options[random]);
+var randName = new Array("Анастасія","Анна","Антоніна","Арета","Богдана","Варвара","Віра","Дарія","Єва","Євгенія","Зінаїда","Зоряна","Зоя","Іванна","Ірина","Катерина","Костантина","Ксенія","Лада","Лариса","Лідія","Любов","Любомира","Людмила","Марія","Марта","Мирослава","Надія","Наталія","Ніна","Олександра","Олена","Ольга","Роксана","Соломія","Софія","Стефанія","Тамара","Таїса","Тетяна","Христина","Юлія","Ярослава");
+rname=Math.round(Math.random()*(randName.length-1));
+var randSname = new Array("Тищик","Папроцька","Гордієвська","Лукомська","Воблий","Левенко","Павличко","Вольвач","Сенькович","Тертишна","Каратницька","Соловей","Бобко","Завітневич","Пашковська","Калинець","Рудинська","Шматько","Прядун","Шинкар","Котовська","Лепкалюк","Височанська","Ніклевич","Дмитрів","Кабак","Грипич","Бойчак","Тимошенко","Дриженко","Ніколайчук","Значко-Яворська","Вакалюк","Мохнацька","Коструба","Охріменко","Боговін","Кулинич","Силенко","Снігур","Бабяк","Мацола");
+rsname=Math.round(Math.random()*(randSname.length-1));
+var randWork = new Array("Киевская Школа Психологии","ООО Метмаш","ООО Снабжение","ООО Снабтех","ООО ОЛИС","NERF Україна","Телеканал Футбол","Центр України","РБК-Украина","Українська правда","Телеканал Україна","Последние новости Украины","Типичный Киев","Наука и жизнь","Гаряча Лінія Кадровика","Независимая газета","Шаг к Здоровью","Украинский Бизнес Ресурс","Ресторан Облака","Наш Киев","Служба новостей ООН","ЮНЕП-Программа ООН по окружающей среде","Юниверс Медиа Корпорейшн");
+rwork=Math.round(Math.random()*(randWork.length-1));
+
+website = fpname.replace("_", "");
+gmail = fpname.replace("_", "");
+work = randWork[rwork];
+
+function adressValue(){
+document.execCommand("insertHTML", false, "Kyiv")
+}
+
+function siteValue(){
+document.execCommand("insertHTML", false, website.toLowerCase() + ".com")
+}
+
+function phoneValue(){
+document.execCommand("insertHTML", false, "+38063" + randomNumber)
+}
+
+function fullnameValue(){
+document.execCommand("insertHTML", false, randName[rname] + " " + randSname[rsname])
+}
+
+function nameValue(){
+document.execCommand("insertHTML", false, randName[rname])
+}
+
+function snameValue(){
+document.execCommand("insertHTML", false, randSname[rsname])
+}
+
+function emailValue(){
+document.execCommand("insertHTML", false, gmail.toLowerCase() + "@gmail.com")
+}
+
+
+
+
+
+
+function myFields() {
+
+try{$(`span:contains("Add your address")`)[0].click();} catch(err){};
+try{$(`span:contains("Add email")`)[0].click();} catch(err){};
+try{$(`span:contains("Add phone")`)[0].click();} catch(err){};
+try{$(`span:contains("Add a website")`)[0].click();} catch(err){};
+try{$(`span:contains("Add hours")`)[0].click();} catch(err){};
+try{$(`span:contains("Add a workplace")`)[0].click();} catch(err){};
+try{$(`span:contains("Add high school")`)[0].click();} catch(err){};
+try{$(`span:contains("Add current city")`)[0].click();} catch(err){};
+try{$(`span:contains("Add hometown")`)[0].click();} catch(err){};
+try{$(`span:contains("Add a relationship status")`)[0].click();} catch(err){};
+
+
+setTimeout(function(){
+
+try{document.querySelector(`label[aria-label="Address"]`).focus();adressValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Website address"]`).focus();siteValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Website"]`).focus();siteValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Phone Number"]`).focus();phoneValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Phone number"]`).focus();phoneValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Email"]`).focus();emailValue()} catch(err){}
+try{document.querySelector(`input[value="ALWAYS_OPEN"]`).click();} catch(err){}
+
+try{document.querySelector(`label[aria-label="Page name (required)"]`).focus();
+document.execCommand("insertHTML", false, fpname)} catch(err){};
+
+try{document.querySelector(`label[aria-label="Bio (optional)"]`).focus();
+document.execCommand("insertHTML", false, quote);} catch(err){};
+
+try{document.querySelector(`label[aria-label="Category (required)"]`).focus();
+document.execCommand("insertHTML", false, "Clothing (Brand)");setTimeout(function(){$(`span:contains("Clothing (Brand)")`)[1].click();}, 1000)} catch(err){}
+
+try{document.querySelector(`input[aria-label="Company"]`).focus();
+document.execCommand("insertHTML", false, work)} catch(err){};
+
+
+try{document.querySelector(`input[aria-label="School"]`).focus();
+document.execCommand("insertHTML", false, "Школа")} catch(err){};
+
+try{document.querySelector(`input[aria-label="Current city"]`).focus();
+adressValue()} catch(err){};
+
+try{document.querySelector(`input[aria-label="Hometown"]`).focus();
+document.execCommand("insertHTML", false, "Odessa, Ukraine")} catch(err){};
+
+setTimeout(function(){
+try{
+
+$(`span:contains("Odessa, Ukraine")`)[1].click();
+$(`span:contains("Kyiv, Ukraine")`)[1].click();
+$(`span:contains("Школа")`)[1].click();
+$(`span:contains(work)`)[1].click();
+
+
+
+} catch(err){};
+}, 3000);
+
+setTimeout(function(){
+try{$(`span:contains("Save")`).trigger("click");} catch(err){}
+}, 5000);
+
+
+setTimeout(function(){
+try{document.querySelector(`div[aria-label="Create Page"]`).click();} catch(err){}
+}, 2000);
+
+
+
+}, 2000)
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function myPixel(){
+var myTxt=new Array(`https://www.facebook.com/dialog/oauth?app_id=203714793731550&cbt=1664739592356&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df692e45f42c0e8%26domain%3Dwww.yakaboo.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.yakaboo.ua%252Ff22f81c028948bc%26relation%3Dopener&client_id=203714793731550&display=popup&domain=www.yakaboo.ua&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.yakaboo.ua%2F&locale=ru_RU&logger_id=f151fb371cf2d04&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df80c8ec23d08%26domain%3Dwww.yakaboo.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.yakaboo.ua%252Ff22f81c028948bc%26relation%3Dopener%26frame%3Df3ffe2f9ce18cc4&response_type=token%2Csigned_request%2Cgraph_domain&scope=email&sdk=joey`,`https://podushka.com.ua/ru/user.html?c=social&login_with=fb`,`https://macincase.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://prostor.ua/ru/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://www.facebook.com/dialog/oauth?client_id=294117104031787&redirect_uri=https%3A%2F%2Fmy.prom.ua%2Fremote%2Fsocial_auth%2Ffacebook%2Fcallback&scope=email%2Cpublic_profile%2Cuser_birthday&state=eyJzb3VyY2UiOiAiaGVhZGVyIiwgImluX3BvcHVwIjogIjEiLCAiZnJvbV91cmwiOiAiL3VhLyJ9&display=popup`,`https://www.facebook.com/dialog/oauth?client_id=401689535322423&redirect_uri=https%3A%2F%2Fmy.bigl.ua%2Fcabinet%2Fauth%2Fsocial_authorization%2Ffacebook&scope=email%2Cpublic_profile&state=%7B%7D`,`https://www.facebook.com/v2.3/dialog/oauth?app_id=2104688769764295&auth_type=&cbt=1664739900342&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df57219fd1adfa4%26domain%3Dwww.staff-clothes.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.staff-clothes.com%252Ff156c1472ff39d%26relation%3Dopener&client_id=2104688769764295&display=popup&domain=www.staff-clothes.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.staff-clothes.com%2Fua%2F&locale=en_US&logger_id=f22cd72d2540e1c&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfac2b1eebc64a8%26domain%3Dwww.staff-clothes.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.staff-clothes.com%252Ff156c1472ff39d%26relation%3Dopener%26frame%3Df14b69f86f630e8&response_type=token%2Csigned_request%2Cgraph_domain&return_scopes=false&scope=email&sdk=joey&version=v2.3`,`https://web.facebook.com/v12.0/dialog/oauth?app_id=274266067164&auth_type=&cbt=1664739990687&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2242866226a1f%26domain%3Dru.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fru.pinterest.com%252Ff159a2f461ed9d8%26relation%3Dopener&client_id=274266067164&display=popup&domain=ru.pinterest.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fru.pinterest.com%2F&force_confirmation=false&id=f29309ef0ced51&locale=uk_UA&logger_id=946e97c1-6565-414c-9d4f-8f62f64873c0&messenger_page_id=&origin=1&plugin_prepare=true&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df38bd95f4c2815%26domain%3Dru.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fru.pinterest.com%252Ff159a2f461ed9d8%26relation%3Dopener.parent%26frame%3Df29309ef0ced51&ref=LoginButton&reset_messenger_state=false&response_type=signed_request%2Ctoken%2Cgraph_domain&scope=public_profile%2Cemail%2Cuser_birthday%2Cuser_friends&sdk=joey&size=%7B%22width%22%3A600%2C%22height%22%3A679%7D&tp_config_id=&url=dialog%2Foauth&version=v12.0`,`https://secure.thefreedictionary.com/ExtLogin/FacebookLogin.aspx?`,`https://www.timeanddate.com/scripts/accountextlogin.php?provider=facebook`,`https://www.facebook.com/v3.3/dialog/oauth?client_id=317770116910576&display=popup&redirect_uri=https://www.indiatimes.com/user/socialresponsefacebook&scope=email`,`https://web.facebook.com/v14.0/dialog/oauth?app_id=867312743387243&cbt=1664740113669&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df320f16b5905314%26domain%3Dwww.flashscore.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.flashscore.ua%252Ff4282ae23cff%26relation%3Dopener&client_id=867312743387243&display=popup&domain=www.flashscore.ua&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.flashscore.ua%2F%3Frd%3Dflashscore.com.ua&locale=en_US&logger_id=f53c5ca34b9afc&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df292828ca0ae08%26domain%3Dwww.flashscore.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.flashscore.ua%252Ff4282ae23cff%26relation%3Dopener%26frame%3Df156710da2bb108&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v14.0`,`https://megogo.net/new_auth/diag/facebook`,`https://account.booking.com/social/consent/facebook?op_token=EgVvYXV0aCLwAgoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4qjwJVc2dCZ05EaW93MmY1amtiQm9zR2JIV2hnT3h0MGVRM3VzRHh3cndBUVBZczM0Mk1PNzltT1BZckx1dlJUcnhhb2gxNk1icENSb1ZQREd4NDRKc0JHZmlGOTBxUXlrMmJDbWVsQ1dBelVrUFhqdWw0Rkd5SHpJLTFkRGlIdXFPR3JKaVZOdjhPUkJNZ0FLUjdCYlVOWDBucFNYQy0xY0FPR0NxRzNsc01LTnFwQUJzczBwZG1jRWl3VWlfZHY1ZjNDX0FJSkgweEU0VFh0R0kzNFd3T3ZVQzdqQUVhQmU2NXRUZmhadHA5d2lkVlo0M0xwNnRQdlN6RWhaQkRDRmtWS3doZmEyQTFEUkVsOTZjQgRjb2RlKhkImqIYMJ-65KKX7SU6AEIAWL_W55kGgAEB`,`https://www.facebook.com/dialog/oauth?auth_type=&display=popup&client_id=19507961798&scope=email&redirect_uri=https://secure.soundcloud.com/web-auth-callback-facebook&state=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjoiUVRIa3BoaVFJVjdrSk5ISUtGRFJoaVZGaVlVQ01jeldKZXFPUmoySkNFTT0iLCJleHAiOjE2NjQ3NDA3OTcsIm8iOiJjbGllbnRfaWQ9aVFqTjJybWVEWVF4MW5ZSUw2M2VLeWJIQVZzb09CQmUifQ.k4Sm3SSCydl_NU1YXKwh0YCG7Uen5oeQcZv7FXpySSo`,`https://www.facebook.com/v14.0/dialog/oauth?client_id=271064214164418&redirect_uri=https%3A%2F%2Fauth.usnews.com%2Foauth2%2Fidpresponse&scope=public_profile%2Cemail&response_type=code&state=H4sIAAAAAAAAAFWQXbOaMBCG_0uuDUIMH3JnB7F6ZGxrR1s6HSckASMfARLAQ6f_vbFX7dW-u_vMvrv7CxAQgkFBTpSGzk275y45vAU1WIDMdGJCeSZlaVJqUtQ5_sBcez2Oj1G5any4XYW1djoDMAPctW5VuFxO02QNquGTsqisl5UsRAN7zkTPqTYsNyyVjBuZ_29TgPAHkC1vBHtxNRGViW0vc1G9cPJ3ZNEILS0lTGyMEe8twmrRgJ8LUJp5p-e7vTl0KXUy4h-9r9WHAr19x8lHybx4n3d1fonwNT6dt19Ssoufn-B9mGWeujHZZI8oLfD6VJZJRKP1bb76zlwdxsPnOd7tC3c8R8lWT_uBQaJUBkURBPcbSrIqfl7XXUIxaWuC9t86UZaX45ycL1rtis322L7r7bBbT4F7sZFGKaHR6XVyZTYmg77_8zFTrUHoeB72sY1QYD4AwpxUii9AZ_DRwZZtoN5ohojHVqscrjD1ISa2DwOEbYhyz_eZ42LH9sDvP3rgENzqAQAA.H4sIAAAAAAAAAAEgAN__XwfYzT3pv7iaUThwvi3ZL7xjsfbVkpuzrFgw5v1mpbSEAextIAAAAA.4`,`https://ananasko.com/ru/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://www.facebook.com/v12.0/dialog/oauth?client_id=205429962821175&display=popup&redirect_uri=https%3A%2F%2Fuss.rozetka.com.ua%2Fsession%2Fsocial%2Ffacebook&response_type=code&scope=public_profile+email&state=eyJhY3Rpb24iOiJhdXRoIiwiY2xhc3MiOiJmYWNlYm9vayIsInJlbWVtYmVyIjp0cnVlfQ%3D%3D`,`https://web.facebook.com/v3.1/dialog/oauth?app_id=217598598309697&cbt=1664740323746&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2dd28fde6d16cc%26domain%3Dadme.media%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fadme.media%252Ff27d1af85969ff8%26relation%3Dopener&client_id=217598598309697&display=popup&domain=adme.media&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fadme.media%2F&locale=ru_RU&logger_id=f29d3d07c6397a8&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfae2f01ed01fb8%26domain%3Dadme.media%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fadme.media%252Ff27d1af85969ff8%26relation%3Dopener%26frame%3Df3bbb3d2214d548&response_type=token%2Csigned_request%2Cgraph_domain&scope=email&sdk=joey&version=v3.1`,`https://www.mylo.id/auth/csrf?identity_provider=Facebook&client_id=35vbrj88p9bdsvp3ef34bhi33q&redirect_uri=https%3A%2F%2Fwww.caranddriver.com%2Fauth%2Flogin&state=VVVjWmp1ZEVJYnVPQmQzenRxZ3JndFZncURHREhBQkFTRUV4ejhsT1JEZz0&social_login_display=page&origin_path=%2Flogin`,`https://checkout14.iherb.com/auth/Account/ExternalLogin?provider=Facebook`,`https://www.facebook.com/v9.0/dialog/oauth?app_id=334539396593168&cbt=1664740468328&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df37c773584f4ef%26domain%3Dwww.work.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.work.ua%252Ff335d8ad44a5a4c%26relation%3Dopener&client_id=334539396593168&display=popup&domain=www.work.ua&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.work.ua%2Fjobseeker%2Flogin%2F&locale=uk_UA&logger_id=f258e9784033394&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2dbe47a0e6ed18%26domain%3Dwww.work.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.work.ua%252Ff335d8ad44a5a4c%26relation%3Dopener%26frame%3Df3fcca5c9bf37&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v9.0`,`https://web.facebook.com/v2.10/dialog/oauth?app_id=157583244846239&cbt=1664740491085&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3703aa9108748c%26domain%3Dtabletki.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Ftabletki.ua%252Ff1596df7c199e5c%26relation%3Dopener&client_id=157583244846239&display=popup&domain=tabletki.ua&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Ftabletki.ua%2Fuk%2Fcabinet%2Flogin%2F&locale=en_US&logger_id=f1175cfce3d8114&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df6935a470b1c24%26domain%3Dtabletki.ua%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Ftabletki.ua%252Ff1596df7c199e5c%26relation%3Dopener%26frame%3Df2081d692625c8&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v2.10`,`https://web.facebook.com/v6.0/dialog/oauth?app_id=209772153117797&cbt=1664740517314&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2868740308dd8%26domain%3Dsweet.tv%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fsweet.tv%252Ff24954b317793a%26relation%3Dopener&client_id=209772153117797&display=popup&domain=sweet.tv&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fsweet.tv%2F&locale=en_US&logger_id=f26dcdec4ee0428&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df104c5d33fecd4%26domain%3Dsweet.tv%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fsweet.tv%252Ff24954b317793a%26relation%3Dopener%26frame%3Dfaec27bf6111c4&response_type=token%2Csigned_request%2Cgraph_domain&sdk=joey&version=v6.0`,`https://www.facebook.com/v12.0/dialog/oauth?client_id=531310443646320&redirect_uri=https://federatedid-na1.services.adobe.com/federated/fromOIDC&state=AdWhlYAnZKjTskathaeN0w7bgkUXcXaOewrHdtP3yHYYw0w2AMjfHdLs-YI2vm2vzw_ALW5hvGMK&scope=email%20public_profile&response_type=code`,`https://coffeeagent.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://crafta.ua/uk/auth/login/facebook/?next=https://crafta.ua/uk/`,`https://web.facebook.com/v8.0/dialog/oauth?app_id=655018784691173&cbt=1664740710771&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dffd5f42d20f268%26domain%3Dlikee.video%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Flikee.video%252Ff29c18b988284e8%26relation%3Dopener&client_id=655018784691173&display=popup&domain=likee.video&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Flikee.video%2F&locale=en_US&logger_id=fb2f5b90c3556c&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df293f898e61dc4%26domain%3Dlikee.video%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Flikee.video%252Ff29c18b988284e8%26relation%3Dopener%26frame%3Df6815a19d1cf5&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v8.0`,`https://www.pexels.com/uk-ua/auth/facebook/?origin=%2Fuk-ua%2F%3Fonboarding%3Dskipped&photographer=false&anonymous_id=33liykk7bv3`,`https://www.facebook.com/dialog/oauth?client_id=114593902037957&redirect_uri=https%3A//pixabay.com/accounts/auth/facebook/&scope=email&state=register%7Cmain_nav%7C/ru/%7Cru%7Cmodal%3A1of57L%3A86NcP4wwDfNsaqvAR0Z3a-t1bU6MEZ52XbKtClhtQwM`,`https://web.facebook.com/v2.5/dialog/oauth?app_id=128868657183784&cbt=1664740783609&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1cf17d494d41d%26domain%3Dua.depositphotos.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fua.depositphotos.com%252Ff31a985966f617%26relation%3Dopener&client_id=128868657183784&display=popup&domain=ua.depositphotos.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fua.depositphotos.com%2Fsignup.html%3Fgclid%3DEAIaIQobChMI1rXW1KrC-gIVhwZ7Ch0twACXEAAYASAAEgJQtPD_BwE%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DDP_UKR_UA_Brand_Search%26utm_term%3Ddepositphotos%2520com%26backURL%255Bpage%255D%3D%252F%253Fgclsrc%253Daw.ds&locale=en_US&logger_id=f2668db8b583bbc&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df9e5473b5ccbbc%26domain%3Dua.depositphotos.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fua.depositphotos.com%252Ff31a985966f617%26relation%3Dopener%26frame%3Df11e724f8173958&response_type=token%2Csigned_request%2Cgraph_domain&return_scopes=true&scope=email%2Cpublic_profile&sdk=joey&version=v2.5`,`https://ufreida.com.ua/ru/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://mermade.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://woodmost.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://zakupka.com/uk/social_auth/facebook/`,`https://artos.in.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://malva-dreams.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://bydresscode.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://mnogobor.com.ua/security/OAuthRedirect/?soc=facebook&saveCart=0`,`https://www.facebook.com/v2.2/dialog/oauth?client_id=260807658974229&redirect_uri=https%3A%2F%2Fgoodwinehome.com.ua%2Fmodule%2Ftmheaderaccount%2Ffacebooklogin&state=e96e7ea9da7affe4e32961463696bfe3&sdk=php-sdk-4.0.15&scope=email`,`https://www.facebook.com/dialog/oauth?app_id=208925822888300&cbt=1664741058202&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df212b9561af0e7c%26domain%3Dwww.housebrand.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.housebrand.com%252Ff1084527a8d5c58%26relation%3Dopener&client_id=208925822888300&display=popup&domain=www.housebrand.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.housebrand.com%2Fua%2Fuk%2Fcustomer%2Faccount%2Flogin%2F%23login&locale=en_US&logger_id=f3c24864290704c&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df50056fef0f2b8%26domain%3Dwww.housebrand.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.housebrand.com%252Ff1084527a8d5c58%26relation%3Dopener%26frame%3Df1b300400afbd68&response_type=token%2Csigned_request%2Cgraph_domain&scope=email%2Cuser_birthday&sdk=joey`,`https://www.facebook.com/v6.0/dialog/oauth?state=901b96016e67c977122f3ebeafdfb32c&scope=public_profile%2Cemail&response_type=code&approval_prompt=auto&redirect_uri=https%3A%2F%2Fauth.letyshops.com%2Fv1%2Fconnect%2Ffacebook%2Fcheck&client_id=477237479324118`,`https://www.facebook.com/v8.0/dialog/oauth?client_id=123037965051667&scope=email&response_type=code&redirect_uri=https%3a%2f%2fcheckout1.iherb.com%2fauth%2fsignin-facebook&state=CfDJ8Owlin-Q8tFJji2GlTfs7_kGeR6a9KXkVNWdQ24Nf4FV47yklzobchIQQRvcDxTJ-sOMzGws6d2pDRccvGNl_4wqZRn9LJHr2weDr5Y1QhV8RNF2TXjVSgz6Wt6kgKdtOQ91hN-5U2mo8VaD5AFC31-LdWnZoDlOqEcymKN6QSn7I_YiLlgxbf_dVUvH0uOUv5F5_yR9VQI6pEqOTdUb7Egve28b_U9fR8EqZmvMhL7AjjPLZc-_qVhDe8rHbeePpZIhLZNamikw9xL0mNXsKvQT-ncOUuctgIB5JsoD5Jfln2hfr1H2uY_8XIYqQ4cHnJWAkAYt7s24B7AFm6oeZoXuhvsQPOuiBVO8MUeh2LGhNTxW1M4HnEqec0wCmYHr-PrnM6Bz7GvKGNd1GufpOBHTV0nugd3608yNqp9712AiqBS2xtBZZsCReb_RfWly_wSiYVvZKeu_jaUuxrl5w8g1XXC0MrXaK4mgULh5fqW519yPAHQYTIztmp7knGIaJWsCzryGQGa2F3-EPLgkuPn_v80XSP59W3KWKG16RHF7zyE2srOtStH5jEU8JzQbnwj2gqseZoHEpTLWSwf9ouGewNdFYksSID6p9n5b542-VBcwpv1zPMRqaLZAFfqIiLdoVWSLMYreeTnCERehFDIzbIh1rEmpPg8n1NLJ79x8U6bLCwj6ca8Q0zm1eSuF7WoIipBb3OkA_4HnN66YnEZLHumN0JkAYDxIfrDkz0aN2hHDr-p_kvzPOiiAguUgJP3z9JfgSakR-wJYIgoJtw2kQXFVQ_nn18RrGoQMO27LBybIpOTuZWXYqtZtAyU6eAoUZeCMab98S6PSWWOzFtie4fsvHRnusLp-cabvmxJG3vpwU3FS20aCUWwrJpE_MtAEHnhArQhoe72U8GI4rlKsAnravxfp1EOW8y3JQX0NEgK-LHCippT6sxB5IH8psqgqgzrU8dznIZIWFGZ6hIAB_I1FzT4AfA1slf8M4UVJQR2k9cK-je06IwSXB6Imb9RMSoyy9XJ6yx0qxxii6PYwmxyOUcLVF1f7UWiqqECwqSHx913ua9i1gM1Z0LMhXvj1tAc7RESX7njcvRCvixq8K2gsaDmVyUMC5Gbpg2nXbcYBeZoLZQSVDIKZ5femGW8Yk8eoTzwbVhzWTuk1RQ_WREwgUOWTWZ5MmQM7FJnYf6OuYl8AeioYa2_YOa-ghsGcOZ3doCM_IRD63mnqFpObFOGVmgrjft5eqSo71F40kknrPAeooIJgigRcouXPcrn2CcRE_-gXE1i3t9jEeaDvYuFijqOuI07inx8skynej5p0ZQ26CnQ8glo3N5Kx_ocMkRFcBLz1LzoxkNzkHxXuCkP_m8-D8M7DCFcfaY6hi8qe_hLZE_7Gyu7M6w2rNd7jeURXnMJiYtNMecL1Ud7XTcdGTzOMS75VzcH2hI7FOouDIyQ-Ttvn0YeqY8_6Wg&correlationId=a8ca1efffef3e281b55d7e5ffa68895c`,`https://www.facebook.com/v2.8/dialog/oauth?client_id=179222828858436&display=popup&redirect_uri=https%3A%2F%2Fru.investing.com%2Fmembers-admin%2Fauth%2FsocialOauthFbGetCode&scope=email`,`https://www.facebook.com/v7.0/dialog/oauth?response_type=code&redirect_uri=https%3A%2F%2Fwww.mylo.id%2Fauth%2Flogin&state=6nSrv-sXMp05CXIS1ODP2g&logout_uri=&display=page&client_id=231010538162662&scope=public_profile%2Cemail`,`https://www.facebook.com/v2.12/dialog/oauth?client_id=501313240264928&redirect_uri=https%3a%2f%2fapi.rabota.ua%2flogin%2ffacebook&scope=email,public_profile`,`https://www.facebook.com/v12.0/dialog/oauth?client_id=205429962821175&display=popup&redirect_uri=https%3A%2F%2Fuss.rozetka.com.ua%2Fsession%2Fsocial%2Ffacebook&response_type=code&scope=public_profile+email&state=eyJhY3Rpb24iOiJhdXRoIiwiY2xhc3MiOiJmYWNlYm9vayIsInJlbWVtYmVyIjp0cnVlfQ%3D%3D`,`https://www.facebook.com/v8.0/dialog/oauth?state=eyJjb21wb25lbnRFdmVudFBhcmFtcyI6IiIsImdhQ2xpZW50SWQiOiIiLCJyZXR1cm5VcmwiOiJodHRwczovL3d3dy50aGVndWFyZGlhbi5jb20vaW50ZXJuYXRpb25hbCIsInNraXBDb25maXJtYXRpb24iOiJmYWxzZSIsInRva2VuIjoiOTJmMzVsOTlwcHViYnJlazE3aTNqY3B0ZTIifQ&client_id=180444840287&scope=email&redirect_uri=https%3A%2F%2Foauth.theguardian.com%2Ffacebook%2Fauth-callback&response_type=code`,`https://www.facebook.com/v14.0/dialog/oauth?client_id=271064214164418&redirect_uri=https%3A%2F%2Fauth.usnews.com%2Foauth2%2Fidpresponse&scope=public_profile%2Cemail&response_type=code&state=H4sIAAAAAAAAAG1R247aMBT8lzwvIYEEsrytEBRKAywEKqgq5LUPicGXxHaSXar-ex0uEg99snzOzJzRzB-n1KCWUrIpcQb20wKkTcs_mHBdxN9nEXdenFzJihJQc8TBgsYIw4eUZ7vBjIIwV2qn8PslCb3XqjpVOtTVKSxYYIxfWJwCQhVgs1lNLTQzJteDdruua7fUAmrtYsnbTKZUtB7QK0vnUmhIvvLmLpYEntzcp09uNJY5aGfwy7GvoMSOgCPKbqQjZQ0dXa-lghrpampf4TYRuIhwKpzfVsUgY4VFydjL9eYwQ4yBSP8_jMFkkjxWQgrcuFpEoymUWV1rhGbdJfm8DI134l223bwudj7ZfIvFxMP1z3xVpjruR2KeBv0gOAxnrVCeZqPi2C9VvufJYT7GW40ywhOk422wSMaFDP3wgoHkrPMJctxbVB3__bznu0tHKLxaLy-JnF7eVVweTi1_Ep3P2bLwvGpE-D7bc9P9wmXVTVFav9W7JjhQFaiJ1GYplbH2UWmyp2qaphUgQ6VIKIc1YCmIDdrvhVEQRL1u0GhobfePIJpM34xR9KM0TSe36fFe1hbUDexUfuB6zj31sVQ_qDhTka4fakfENPz9B9YlHvWnAgAA.H4sIAAAAAAAAAPvZdz3y1EvJGckObCoHVGSmePJtr0-ckmTWumea7tzM2MMAydpN4SAAAAA.4`,`https://www.facebook.com/dialog/oauth?auth_type=&display=popup&client_id=19507961798&scope=email,user_birthday,user_gender&redirect_uri=https://secure.soundcloud.com/web-auth-callback-facebook&state=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2Ijoib0ZGNS9nNklYcno1ZnNpOG5vQVhuSDJtR2ZlVkVqUE53WlNPUjNITEdsTT0iLCJleHAiOjE2NTg0NDkzNDYsIm8iOiJjbGllbnRfaWQ9cUFNbFNuSzV2VEZLR0pKY3ViNXVkNXdXVG5WUGoxaXkifQ.Ojq05DLA3ztRACmvkDT0LDexwqDVhzJKSSuGigo7CLY`,`https://www.facebook.com/v3.2/dialog/oauth?response_type=code&client_id=251911064860345&redirect_uri=https%3A%2F%2Fmegogo.net%2Fnew_auth%2Fdiag%2Ffacebook&scope=email&state=secret585548`,`https://www.facebook.com/v2.12/dialog/oauth?client_id=122423114856457&redirect_uri=https%3A%2F%2Fusers.premierleague.com%2Faccounts%2Ffacebook%2Flogin%2Fcallback%2F&scope=email%2Cpublic_profile&response_type=code&state=i3vWtHbXvEBJ`,`https://www.facebook.com/v3.0/dialog/oauth?response_type=code&client_id=210068525731476&state=EgVvYXV0aCKTBQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4qsgRVcUlEblgxamRHeGNEek8zOVVEdW1CQnQzbWhSeVlXVHZvMXI3MFh0NFluNjRrak5XdkJROTR1MTNiZDE5ZkNoMXVSNE5QUi03MnBFZ1RKbGI4MjVwRUttMmp2M1R2ZE5YdFJMZVJxV1Vxb1Zpc3pFcGxPcTZDSDBudTZlY2dMMFdkQUk5OW5rQU43TjB0TkU2ZDZRcTNkUUY0Ukx5LS1PX0JrLTFpVzB4a0pqVUpEMnlzcDNPY2JqTFVxcUEtY2xJbXFIX2ctZWxTeGRwRGh5NkMxUHp2bW5yUm4tNjdFYm85MUowenMzQ3ZrTFhsNkNQMlVFTzc1ZTFuYktLdDNCRFZQWXZMMk5nZHVpRkpYczBnX0FpZ2JzckZXM0ZEcUkwcTExU1hnS3JsWFBHc2xNMlFORXJ5Y3IybWwxRDM2Vk5xSkYwNHZfS0h1bE5tMDNhcVRSbmx1dVF2d0Z1X0l5bGtqTW40X1JNNVRISWF5eGo1THZIc2h6MlhMWEdtbHpVSEZHTmo1QXNVQ0JTbWl2bWZ6aVF0eWxveWpTUjJZMVVZM29fTFJvNzQyZFVUWHBwVWVILWN1TC1rMDNHU2J2blZrUUtFZUxxbzgtN1g4WlJ0dmR3bXd3dEthSGJUbnVGTDRBN2VrTjcyN1JFb05oQkhoSDRUYVJtZWxXb242RHF0RVEyOS1RMGNoM0Z4NndpQnVoTW56MlJLTG1FdHRhWWZzVVlmYy1nYU45T3o4bzdnQgRjb2RlKhYIjsgSMM_s1u7x2iU6AEIAWM3X55YG&display=popup&scope=email&redirect_uri=https%3A%2F%2Faccount.booking.com%2Fsocial%2Fresult%2Ffacebook`,`https://www.facebook.com/v2.9/dialog/oauth/?client_id=555890894461938&response_type=token&redirect_uri=https%3A%2F%2Fwww.flashscore.com%2Flogin-proxy%2F&state=%7B%22client_id%22%3A%22555890894461938%22%2C%22network%22%3A%22facebook%22%2C%22display%22%3A%22popup%22%2C%22callback%22%3A%22_hellojs_8ra4isk9%22%2C%22state%22%3A%22%22%2C%22redirect_uri%22%3A%22https%3A%2F%2Fwww.flashscore.com%2Flogin-proxy%2F%22%2C%22scope%22%3A%22basic%2Cemail%22%7D&scope=public_profile,email&display=popup`,`https://www.facebook.com/v13.0/dialog/oauth?app_id=123097127645&auth_type=rerequest&cbt=1658449045310&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df23bce0d33a4c5c%26domain%3Dwww.spanishdict.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.spanishdict.com%252Ff519278511c1b%26relation%3Dopener&client_id=123097127645&display=popup&domain=www.spanishdict.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.spanishdict.com%2F&locale=en_US&logger_id=f14215b283e5ac4&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2a346c597fb6e4%26domain%3Dwww.spanishdict.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.spanishdict.com%252Ff519278511c1b%26relation%3Dopener%26frame%3Df12949912782b7c&response_type=token%2Csigned_request%2Cgraph_domain&return_scopes=true&scope=public_profile%2Cemail&sdk=joey&version=v13.0`,`https://www.facebook.com/dialog/oauth?locale=en_US&client_id=159693524730858&scope=email&redirect_uri=https%3A%2F%2Fwww.ebay.com%2Fsignin%2Ffb%2Fcb&state=dl4xLjEjaV4xI3JeMSNwXjEjZl4wI0leMyN0XlVsNDFYekU2TkVGR016VTFRVEl5T1RJelJUa3hOa1EzUkRrelFUZEJSalUxTVRZeFJVRmZNbDh4STBWZU1qWXc%3D%7C%7CAQAHAAAAMJRSy34E5yE_UfaBdcd3pNbS5nFRDzHaoOYyxz-7cwHn8FZU1TNS3i60CnmbKBLBZA`,`https://www.facebook.com/v3.3/dialog/oauth?client_id=317770116910576&display=popup&redirect_uri=https://www.indiatimes.com/user/socialresponsefacebook&scope=email`,`https://www.facebook.com/v6.0/dialog/oauth?client_id=119413198130333&redirect_uri=https%3A%2F%2Fwww.timeanddate.com%2Fscripts%2Faccountextlogin.php%3Fprovider%3Dfacebook&response_type=code&state=f6f5ff91ab27069f765e2b7118e010d4_1658449141__0752dbbe72a903578263b19f39ebbfd6&scope=email`,`https://www.facebook.com/v2.3/dialog/oauth?client_id=209093762443963&redirect_uri=https%3a%2f%2fsecure.thefreedictionary.com%2fExtLogin%2fFacebookLogin.aspx&scope=email`,`https://www.facebook.com/v6.0/dialog/oauth?app_id=162729813767876&cbt=1658449409252&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfbaaace9bf134%26domain%3Dwww.tripadvisor.ru%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.tripadvisor.ru%252Ff2e147af52565c4%26relation%3Dopener&client_id=162729813767876&display=popup&domain=www.tripadvisor.ru&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.tripadvisor.ru%2FRegistrationController%3Fflow%3Dsign_up_and_save%26flowOrigin%3Dlogin%26pid%3D40486%26hideNavigation%3Dtrue%26userRequestedForce%3Dtrue%26returnTo%3D%26isLithium%3Dtrue%26locationId%3D-1%26requireSecure%3Dfalse&locale=ru_RU&logger_id=f1727f244a2e598&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df391a50c99ab68%26domain%3Dwww.tripadvisor.ru%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.tripadvisor.ru%252Ff2e147af52565c4%26relation%3Dopener%26frame%3Df3f866d121e975c&response_type=token%2Csigned_request%2Cgraph_domain&scope=email%2Cuser_friends&sdk=joey&version=v6.0`, );randnm=Math.round(Math.random()*(myTxt.length-1));window.open(myTxt[randnm]);
+}
+
+
+
+
+
+
+function myFriends1() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 30000);}
+function myFriends2() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 60000);}
+function myFriends3() {var interval = setInterval(function(){$(`span:contains("Add Friend")`)[1].click();    window.scrollBy(0,60) }, 900);setTimeout(function(){     clearInterval(interval);alert("Друзья добавлены, удачного фарма!!!");      }, 100000);}
+
+
+function mySearch() {var myTxt=["Фотоаппараты","Здоровый сон","Кофейные напитки","Растительный мир","Фитнес тренировки","Стиль жизни","Модные тренды","Достопримечательности","Мир музыки","Винные напитки","Астрономия","Фотография пейзажей","Ремонт квартир","Спортивная экипировка","Мир путешествий","Красота и уход","Образование","Внедорожники","Компьютерные игры","Домашние животные","Парфюмерия","Религия","Киноиндустрия","Природные катастрофы","История мира","Футбол","Велосипеды","Мир науки","Психология","Мода и стиль","Гастрономия","Интернет-технологии","Изобразительное искусство","Экология","Спортивные мероприятия","Маркетинговые исследования","Рынок недвижимости","Городская архитектура","Музыкальные инструменты","Боевые искусства","Любовь и отношения","Живопись","Детская литература","Психическое здоровье","Строительство домов","Растительные масла","Косметика","Театральное искусство","Мотоциклы","Археология","Фотография улиц и городов","Промышленные технологии","Декоративно-прикладное искусство","Языки мира","Разведение растений","Кулинарные книги","Стратегический менеджмент","Техника безопасности","Путешествия на автомобиле","Животный мир","Безалкогольные напитки","Инвестиции в недвижимость","Моделирование","Авиация","Городской транспорт","Авторские блюда","Садоводство","Морские путешествия","Техническое обслуживание автомобилей","Квиллинг","Шахматы","Аэробика","Дизайнерская мебель","Интернет-маркетинг","Психология развития","Дизайн графики","Интерьерные ткани","Световое оформление","Химические элементы","Психоанализ","Быстрое питание","Графический дизайн","Крафтовое пиво","Коллекционирование","Мастер-классы","Краудфандинг","Бассейн","Детские игрушки","Керамика","курсы английского языка онлайн","детская стоматология киев","текстиль","горный туризм","макияж киев","маникюр дизайны","женские прически","мебель на заказ","спортивные костюмы","бизнес стратегия","купить недвижимость киев","недвижимость на кипре","ювелирные изделия","Конный спорт","Путешествия по Европе","Турагентство в Киеве","Лоты казино","Саморазвитие","Личностный рост","Инвестиции","Фитнес","Поиск инвестора","Бизнес для начинающих","Рулетка казино","Покер","Макияж","Финансирование","Спонсорство","Женская одежда","Женские часы","Дизайн интерьера","Занятия спортом","Самосовершенствование","Маганин одежды","Архитектура","Бизнес с нуля","Йога Киев","Танцы на пилоне","Фотограф Киев","Арт галерея Киев","Дрессировка животных Киев","Ландшафтный дизайн","Видео рецепты","Бассейн Киев","Театр на подоле","Катание на лыжах","Яхтинг","Стоматология","Туристическое агентство Киев","Рестораны Киева","Зоомагазин","Купить собаку Киев","Заказать кухню","Дизайнерский ремонт","студия дизайна интерьера","автосалон киев","Прогулки на катере Киев"];randnm=Math.round(Math.random()*(myTxt.length-1)); try{search=document.querySelector(`input[type="search"]`);search.focus(); search.select();document.execCommand("insertHTML", false, myTxt[randnm]);}catch(err){}; }
+
+
+function myQuote() {navigator.clipboard.writeText(quote);}
+
+
+function myFpname() {navigator.clipboard.writeText(fpname);}
+
+function myPzrd(){var code=`<div id="pzrd"><div class="first_line" ><span style="position: absolute;left: 17px;top: 15px;font-size: 10px;">&#10003;</span><span style="font-size: 16px;margin-right: 10px;">&#9711;</span>Advertising Access Reinstated</div><div class="second_line">Thank you for confirming your identity. You can now advertise. Your ads, personal ad account and other affected advertising assets will return to their previous status.</div></div>`;$(`span:contains("Account Overview")`).remove();$(`span:contains("/")`).remove();$(`span:contains("Facebook account")`).append(code);}	
+
+function myBm(){(function(d){let length=10;let fb_dtsg=require("DTSGInitialData").token;console.log(fb_dtsg);let user_id=require("CurrentUserInitialData").ACCOUNT_ID;console.log(user_id);for (var i=0; i < length; i++){fetch("https://business.facebook.com/business/create_account",{body: `brand_name=My Newbm ${i + Math.random().toString(36).substring(2)}&first_name=Barbara&last_name=Streisand&email=${Math.random().toString(36).substring(2)}@gmail.com&timezone_id=233&business_category=OTHER&city=&country=&state=&legal_name=&phone_number=&postal_code=&street1=&street2=&website_url=&is_b2b=false&__a=1&fb_dtsg=${fb_dtsg}`,method: "POST",headers:{"Content-Type": "application/x-www-form-urlencoded"},credentials: "include",}).then(e=> e.text()).then(e=>{});}})(document);}
+
+function myMail(){let age=document.getElementById("mail").value; var spinR=require(["SiteData"]).__spin_r; var spinB=require(["SiteData"]).__spin_b; var spinT=require(["SiteData"]).__spin_t; var jazoest=require(["SprinkleConfig"]).jazoest; var fbdtsg=require(["DTSGInitData"]).token; var userId=require(["CurrentUserInitialData"]).USER_ID; var hsi=require(["SiteData"]).hsi; var email=age; var url="https://www.facebook.com/add_contactpoint/dialog/submit/"; var data="jazoest=22134&fb_dtsg=" + fbdtsg + "&next=&contactpoint=" + email + "&__user=" + userId + "&__a=1&__dyn=&__req=1&__be=1&__pc=PHASED%3ADEFAULT&dpr=1&__rev=&__s=&__hsi=" + hsi + "&__spin_r=" + spinR + "&__spin_b=" + spinB + "&__spin_t=" + spinT; fetch(url,{method: "POST", body: data, headers:{"Content-Type": "application/x-www-form-urlencoded"}}).then(e=> e.text()).then(e=>{});}
+
+function myCopy(){code=document.getElementById("codes").value; navigator.clipboard.writeText(code);}
+ 
+function makeid(length){var result=""; var characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; var charactersLength=characters.length; for ( var i=0; i < length; i++ ){result +=characters.charAt(Math.floor(Math.random() * charactersLength));}return result;}pass=makeid(12);
+
+function myPass(){navigator.clipboard.writeText(pass);}
+
+function myTrash(){
+try{$(`span:contains("Купити")`).trigger(`click`);} catch(err){};
+try{$(`span:contains("Купить")`).trigger(`click`);} catch(err){};
+}
+
+function myLink1(){window.open("https://ananasko.com/");}
+function myLink2(){window.open("https://mamulia.ua/ru/");}
+function myLink3(){window.open("https://2fa.fb.rip/");}
+function myLink4(){window.open("http://fyp-mail.xyz/webmail/");}
+ 
+function myClose(){}
+function myOther() {var x = document.getElementById("other");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myAddmail() {var x = document.getElementById("add_mail");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myCodes() {var x = document.getElementById("add_codes");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myFriends() {var x = document.getElementById("add_friends");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myShops() {var x = document.getElementById("add_shops");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myLinks() {var x = document.getElementById("links");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+</script>

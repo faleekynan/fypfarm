@@ -1,5 +1,17 @@
-var x = document.getElementsByTagName("head")[0];
-var y = document.createElement("script");
-y.src = "https://raw.githubusercontent.com/faleekynan/fypfarm/main/fyp_scripts/alert.js";
-x.appendChild(y);
 
+
+try{
+search = document.querySelector('input[type="search"]');
+search.focus(); search.select();
+document.execCommand("insertHTML", false, mySearch[randnm]);
+} catch(err){console.log(err)}
+
+try{
+document.querySelector('[aria-label="Page name (required)"]').focus();
+document.execCommand("insertHTML", false, names);
+} catch(err){console.log(err)}
+
+try{
+document.querySelector('[aria-label="Bio (optional)"]').focus();
+document.execCommand("insertHTML", false, quote);
+} catch(err){console.log(err)}
