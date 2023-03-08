@@ -1,0 +1,14 @@
+{
+  "name": "Нагул куки",
+  "version": "1.1",
+  "manifest_version": 2,
+  "description": "Opens a random page and clicks on random links and buttons",
+  "permissions": ["activeTab", "tabs", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+	"persistent": false
+  },
+  "browser_action": {
+
+  }
+}

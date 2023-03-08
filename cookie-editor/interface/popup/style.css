@@ -89,7 +89,6 @@ button:focus {outline:0;}
     max-height: 400px;
     overflow-y: auto;
     background-color: #eaeaea;
-	display:none;
 }
 
 #no-cookies {
