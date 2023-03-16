@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+nav {
+  display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+		z-index: 999;
+		    position: relative;
+}
+.right_ad,
+.left_ad{
+	position:relative;
+}
+
+.adv{
+	
+	
+}
+.adv img{
+	width: 100%;
+}
+
 .rand_btn{
 	font-size: 110%;
     background: blue;
@@ -93,13 +113,12 @@ background-image: url(img/back2.jpg);
 }
 
 .btn{
-	z-index: 999;
-    width: 100%;
-    position: absolute;
+
+    position: relative;
     
 }
 .wrap{
-	width: 30%;
+	/*width: 30%;*/
     margin: 0 auto;
 }
 

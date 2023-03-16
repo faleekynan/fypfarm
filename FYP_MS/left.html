@@ -1,0 +1,365 @@
+<style>
+
+#scripts{
+display: inline-block;
+text-align: left;
+line-height: 1;
+background: white;
+box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+font-family: system-ui !important;
+color: #202020;
+position: fixed;
+top: 0;
+left: 0;
+width: 1px;
+opacity:0;
+overflow:hidden;
+height: 100%;
+z-index: 9999999999999999;
+overflow-y: auto;
+
+}
+#scripts:hover{
+width: 15rem;
+opacity:1;
+}
+#scripts span{
+font-weight: 500;
+    display: block;
+    font-size: 1rem;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+#scripts span:hover{
+  background:#eee;
+}
+#scripts input{
+padding: 4px;
+    border-radius: 6px;
+    text-align: left;
+    font-family: system-ui !important;
+    font-size: 1rem !important;
+    margin: 10px 30px;
+}
+#hide,
+#links,
+#add_shops,
+#add_friends,
+#add_codes,
+#add_mail,
+#other,
+#create_bm
+{
+display:none;
+}
+#dropdown::before,
+#single::before
+{
+position: absolute;
+left: 10px;
+}
+#dropdown::before{
+content:"=";
+line-height: 0.9;
+}
+#single::before{
+content:"#";
+line-height: 1;
+}
+#close{
+color: white;
+background: #E94B3C !important;
+}
+#close:hover{
+background: red !important;
+}
+hr{
+border: none;
+height: 1px;
+background: #ddd;
+}
+#add_friends{
+margin:0 30px;
+}
+#add_friends button{
+    width: 30%;
+    padding: 5px 0px;
+    margin-top: 10px;
+}
+
+</style>
+
+<div id="scripts">
+<span id="single" onclick="mySearch()">Поисковый запрос</span>
+<span id="single" onclick="myQuote()">Скопировать цитату</span>
+<span id="dropdown" onclick="myFriends()">Добавить друзей</span>
+<div id="add_friends">
+<button onclick="myFriends1()">30</button>
+<button onclick="myFriends2()">60</button>
+<button onclick="myFriends3()">100</button>
+</div>
+<hr>
+
+<span id="single" onclick="myFields()">Автозаполнение</span>
+<span id="single" onclick="myPixel()">ФБ пиксель</span>
+<span id="single" onclick="myFpinvite()">Инвайт в ФП</span>
+<hr>
+
+
+
+<span id="dropdown" onclick="myAddmail()">Привязка почты</span>
+<div id="add_mail">
+<input id="mail" placeholder="Вставь в меня почту"/>
+<span onclick="myMail()">Привязать</span>
+</div>
+<hr>
+
+<span id="dropdown" onclick="myShops()">Покупки</span>
+<div id="add_shops">
+<span onclick="myTrash()">Ananasko</span>
+<span onclick="myTrash()">Просто неба</span>
+<hr>
+</div>
+
+<span id="dropdown" onclick="myCodes()">Конвертер 2ФА</span>
+<div id="add_codes">
+<input id="codes" placeholder="Вставь коды"/>
+<span onclick="myCopy()">Скопировать</span>
+</div>
+<span id="single" onclick="myBm()">Создать БМ</span>
+<hr>
+
+<span id="dropdown" onclick="myOther()">Разное</span>
+<div id="other">
+<span onclick="myFpname()">Рандомное имя</span>
+<span onclick="myPass()">Создать пароль</span>
+<hr>
+</div>
+
+<span id="dropdown" onclick="myLinks()">Ссылки</span>
+<div id="links">
+<span onclick="myLink1()">Ананаско</span>
+<span onclick="myLink2()">Просто неба</span>
+<span onclick="myLink3()">Сайт для 2ФА</span>
+<span onclick="myLink4()">Почта</span>
+<span onclick="myLink5()">Селфи</span>
+<span onclick="myLink6()">Blueprint</span>
+<hr>
+</div>
+
+
+</div>
+
+<script>
+
+var randomNumber = Math.floor((Math.random() * 1111111) + 8888888);
+for(var matches,options,random,quote1="{Miłość to najpiękniejsze uczucie na świecie.|Życie jest piękne, kiedy jesteśmy zakochani.|Miłość to siła, która napędza nasze serca i dusze.|Bez miłości życie traci sens.|Życie to podróż, a miłość jest naszym przewodnikiem.|Miłość to magia, która sprawia, że świat staje się piękniejszy.|Każdy potrzebuje miłości, aby czuć się kompletnym.|Bez miłości jesteśmy jak cienie, które nie mają życia.|Miłość jest ogniem, który rozjaśnia nawet najciemniejsze dni.|Życie jest krótkie, ale miłość trwa wiecznie.|Bez miłości nic nie ma wartości.|Miłość to nie tylko uczucie, to także wybór i działanie.|Życie to przygoda, a miłość to jej najpiękniejszy element.|Bez miłości nasze serca są puste.|Miłość to siła, która napędza nas do działania.|Życie jest piękne, kiedy dzielimy je z kimś, kogo kochamy.|Bez miłości nie ma życia.|Miłość to uczucie, które sprawia, że jesteśmy lepsi.|Życie to dar, który warto cenić i doceniać.|Bez miłości nasze życie jest bezcelowe.|Miłość to tajemnica, którą trzeba odkrywać każdego dnia.|Życie to podróż, a miłość to nasz towarzysz.|Bez miłości nasze serca są martwe.|Miłość to dar, który trzeba pielęgnować i chronić.|Życie to szansa, którą warto wykorzystać.|Bez miłości nasze serca są samotne.|Miłość to magia, która potrafi zmienić całe życie.|Życie to piękna przygoda, a miłość to jej najsłodszy owoc.|Bez miłości nasze serca są puste i bezwartościowe.|Miłość to siła, która napędza nas do odwagi i działania.|Życie to dar, który warto doceniać i szanować.|Bez miłości nasze serca są skamieniałe.}{Miłość to uczucie, które nie zna granic.|Życie to szansa, aby odkryć piękno świata i miłości.|Bez miłości nasze serca są zamknięte.|Miłość to dar, który trzeba pielęgnować każdego dnia.|Kobieta to najpiękniejsze dzieło natury.|Nie ma nic piękniejszego niż uśmiech kobiety.|Kobiety są jak kwiaty, trzeba się nimi opiekować, aby rosły i kwitły.|Kobieta to siła, która potrafi zmiękczyć nawet najtwardsze serce.|Kobiety to tajemnicze istoty, które trzeba rozgryźć, aby poznać ich prawdziwe ja.|Kobiety są jak księżyc – piękne, tajemnicze i zawsze na posterunku.|Kobiety są jak ptaki – piękne, kolorowe i wolne.|Kobiety są jak anioły – piękne, delikatne i dobre.|Kobiety to skarby, które trzeba pielęgnować i szanować.|Kobiety to kwiaty życia, które warto podziwiać i kochać.|Kobieta to oaza spokoju w szaleństwie świata.|Kobiety są jak słońce – rozświetlają swoim blaskiem każdy dzień.|Kobiety to nie tylko piękno zewnętrzne, ale i wewnętrzne.|Kobiety są jak róże – piękne, delikatne i pachnące.|Kobiety to dary, które warto doceniać i szanować.|Kobiety są jak woda – ożywiają swoim istnieniem każde miejsce.|Kobiety to kwintesencja życia, która otacza nas z każdej strony.|Kobiety są jak wiatr – pełne energii i życia.|Kobiety to gwiazdy, które rozświetlają nam drogę życia.|Kobiety to marzenia, które warto spełniać.|Kobieta to zawsze więcej niż myślimy.|Kobieta to tajemnica, która potrafi zainspirować każdego.|Kobiety to zawsze coś więcej niż tylko piękno.|Kobiety to splot emocji, które warto poznać.|Kobiety to mistrzynie sztuki życia.|Kobiety to delikatne kwiaty, które trzeba pielęgnować.|Kobiety to kameleonki, które potrafią zmienić się w każdej sytuacji.|Kobiety to zawsze wielka siła i determinacja.|Kobiety to nie tylko słabość, ale i ogromna moc.|Kobiety to splot wrażliwości i siły.|Kobiety to piękne istoty, które warto podziwiać i szanować.|Kobiety to nie tylko matki, ale i najlepsze przyjaciółki.|Zakupy to najlepsza terapia.|Dla wielu kobiet zakupy to lekarstwo na złe samopoczucie.|Zakupy to sposób na poprawienie nastroju.|Kupowanie nowych rzeczy to zawsze przyjemność.|Zakupy to sposób na wyrażenie swojego stylu i indywidualności.|Kobiety uwielbiają zakupy, bo to sposób na spełnienie marzeń.|Kupowanie nowych ubrań to sposób na zbudowanie pewności siebie.|}{Zakupy to przyjemność, której nie można sobie odmówić.|Kupowanie nowych rzeczy to sposobność na eksperymentowanie ze stylem.|Zakupy to sposób na odprężenie i relaks.|Kobiety uwielbiają zakupy, bo to sposób na odskoczenie od codzienności.|Zakupy to sposobność na odkrycie nowych trendów i stylów.|Kupowanie nowych rzeczy to sposób na zaspokojenie potrzeb estetycznych.|Zakupy to najlepszy sposób na obdarowanie siebie prezentem.|Kobiety kochają zakupy, bo to sposób na spełnienie marzeń o pięknej garderobie.|Kupowanie nowych ubrań to sposób na wyrażenie swojej osobowości.|Zakupy to sposób na odreagowanie stresu i zmęczenia.|Kupowanie nowych rzeczy to sposób na podniesienie sobie na duchu.|Zakupy to najlepsza terapia po rozstaniu z partnerem.|Kobiety uwielbiają zakupy, bo to sposób na odnalezienie swojego stylu.|Zakupy to sposób na poprawienie swojego samopoczucia.|Kupowanie nowych rzeczy to sposób na zaspokojenie potrzeby zmiany.|Zakupy to sposób na odprężenie się i oderwanie od problemów.|Kobiety kochają zakupy, bo to sposób na odnalezienie swojej indywidualności.|Zakupy to sposób na zaspokojenie potrzeb materialnych.|Kupowanie nowych rzeczy to sposób na podkreślenie swojej urody.|Zakupy to sposobność na pokazanie swojego stylu.|Kobiety uwielbiają zakupy, bo to sposób na spełnienie swoich marzeń.|Zakupy to sposób na poprawienie swojego nastroju po ciężkim dniu.|Kupowanie nowych rzeczy to sposób na poczucie się wyjątkową.|Zakupy to sposób na zabawę modą.|Kobiety kochają zakupy, bo to sposób na zbudowanie swojego stylu.|Zakupy to sposób na eksperymentowanie z nowymi trendami.|Kupowanie nowych rzeczy to sposób na wyrażenie siebie.|Zakupy to sposób na odkrycie swojego stylu i wyjątkowości.|Miłość to najpiękniejsze uczucie na świecie.|Kto nie kocha, nie żyje.|Bez miłości życie jest puste.|Miłość to magia, która potrafi zdziałać cuda.|Nie ma życia bez miłości.|Miłość to siła, która przetrwa wszystko.|Miłość to dar, który warto pielęgnować każdego dnia.|Miłość nie zna granic, jest uniwersalna i ponadczasowa.|Bez miłości świat byłby pozbawiony sensu.|Miłość to najpiękniejsze co może spotkać człowieka.|W miłości czas zatrzymuje się na chwilę, abyśmy mogli cieszyć się nią bez końca.|Miłość to szansa na spełnienie marzeń.|Miłość to jedyny język, którym warto mówić.|Miłość to uczucie, które rozwija się w sercu, ale objawia się w działaniu.|Miłość to dar, który otrzymujemy i dajemy innym.|Miłość to przepis na szczęście.|Miłość to sztuka, która wymaga troski i zaangażowania.|Miłość to droga, która warto przemierzyć, mimo trudności i przeciwności.|Miłość to siła, która potrafi uzdrawiać rany.|Miłość to jedyny sposób, aby zrozumieć, co tak naprawdę ma znaczenie w życiu.|}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(quote1));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),quote1=quote1.replace(matches[0],options[random]);
+for(var matches,options,random,fpname="{Uthman|Lawrence|Immanuel|Nikko|Salvador|Josue|Pierce|Xever|Nick|Landen|Percy|Xayvion|Levi|Harold|Samir|Edison|Vinson|Milo|Xiomar|Yash|Finley|Forest|Xeno|Collin|Yakov|Leonidas|Ulric|Xun|Conor|Zeppelin|Francisco|Brentley|Conner|Dawson|Roberto|Quintrell|Hartley|Penn|Ryker|Raul|Kye|Shawn|Samir|Derek|Porter|Muhammad|Declan|Winston|Yeshua|Nehemiah|Emmitt|Tanner|Hugo|Quinto|Truman|Yunis|Gordon|Gideon|Grayson|Nikhil|Xandro|Raul|Jackson|Watson|Gunnar|Quent|Xandros|Zachary|Lionel|Leo|Dexter|Ethan|Raiden|Lucas|Harlow|Abel|Ximenez}_{A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z}{A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(fpname));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),fpname=fpname.replace(matches[0],options[random]);
+var randName = new Array("Анастасія","Анна","Антоніна","Арета","Богдана","Варвара","Віра","Дарія","Єва","Євгенія","Зінаїда","Зоряна","Зоя","Іванна","Ірина","Катерина","Костантина","Ксенія","Лада","Лариса","Лідія","Любов","Любомира","Людмила","Марія","Марта","Мирослава","Надія","Наталія","Ніна","Олександра","Олена","Ольга","Роксана","Соломія","Софія","Стефанія","Тамара","Таїса","Тетяна","Христина","Юлія","Ярослава");
+rname=Math.round(Math.random()*(randName.length-1));
+var randSname = new Array("Тищик","Папроцька","Гордієвська","Лукомська","Воблий","Левенко","Павличко","Вольвач","Сенькович","Тертишна","Каратницька","Соловей","Бобко","Завітневич","Пашковська","Калинець","Рудинська","Шматько","Прядун","Шинкар","Котовська","Лепкалюк","Височанська","Ніклевич","Дмитрів","Кабак","Грипич","Бойчак","Тимошенко","Дриженко","Ніколайчук","Значко-Яворська","Вакалюк","Мохнацька","Коструба","Охріменко","Боговін","Кулинич","Силенко","Снігур","Бабяк","Мацола");
+rsname=Math.round(Math.random()*(randSname.length-1));
+var randWork = new Array("Bank Pekao S.A." , "PKO Bank Polski" , "Polski Bank Komórek Macierzystych" , "Narodowy Bank Polski" , "mBank Polska" , "Santander Bank Polska");
+rwork=Math.round(Math.random()*(randWork.length-1));
+
+website = fpname.replace("_", "");
+gmail = fpname.replace("_", "");
+work = randWork[rwork];
+
+function adressValue(){
+document.execCommand("insertHTML", false, "Warszawa")
+}
+
+function siteValue(){
+document.execCommand("insertHTML", false, website.toLowerCase() + ".com")
+}
+
+function phoneValue(){
+document.execCommand("insertHTML", false, "+4879" + randomNumber)
+}
+
+function fullnameValue(){
+document.execCommand("insertHTML", false, randName[rname] + " " + randSname[rsname])
+}
+
+function nameValue(){
+document.execCommand("insertHTML", false, randName[rname])
+}
+
+function snameValue(){
+document.execCommand("insertHTML", false, randSname[rsname])
+}
+
+function emailValue(){
+document.execCommand("insertHTML", false, gmail.toLowerCase() + "@gmail.com")
+}
+
+
+
+
+
+
+function myFields() {
+
+try{$(`span:contains("Dodaj adres")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj adres e-mail")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj numer telefonu")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj witrynę internetową")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj godziny pracy")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj miejsce pracy")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj szkołę średnią")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj aktualne miejsce zamieszkania")`)[0].click();} catch(err){};
+try{$(`span:contains("Dodaj miasto rodzinne")`)[0].click();} catch(err){};
+
+
+setTimeout(function(){
+
+try{document.querySelector(`label[aria-label="Adres"]`).focus();adressValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Witryna internetowa"]`).focus();siteValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Adres witryny"]`).focus();siteValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Numer telefonu"]`).focus();phoneValue()} catch(err){}
+try{document.querySelector(`label[aria-label="Adres e-mail"]`).focus();emailValue()} catch(err){}
+try{document.querySelector(`input[value="ALWAYS_OPEN"]`).click();} catch(err){}
+
+try{document.querySelector(`label[aria-label="Nazwa strony (wymagana)"]`).focus();
+document.execCommand("insertHTML", false, fpname)} catch(err){};
+
+try{document.querySelector(`label[aria-label="Biogram (opcjonalnie)"]`).focus();
+document.execCommand("insertHTML", false, quote1);} catch(err){};
+
+try{document.querySelector(`label[aria-label="Kategoria (wymagana)"]`).focus();
+document.execCommand("insertHTML", false, "Odzież (marka)");setTimeout(function(){$(`span:contains("Odzież (marka)")`)[1].click();}, 1000)} catch(err){}
+
+try{document.querySelector(`input[aria-label="Firma"]`).focus();
+document.execCommand("insertHTML", false, work)} catch(err){};
+
+
+try{document.querySelector(`input[aria-label="Szkoła"]`).focus();
+document.execCommand("insertHTML", false, "Szkoła")} catch(err){};
+
+try{document.querySelector(`input[aria-label="Aktualna miejscowość"]`).focus();
+adressValue()} catch(err){};
+
+try{document.querySelector(`input[aria-label="Miasto rodzinne"]`).focus();
+document.execCommand("insertHTML", false, "Poznań")} catch(err){};
+
+setTimeout(function(){
+try{
+
+$(`span:contains("Poznań")`)[1].click();
+$(`span:contains("Warszawa")`)[1].click();
+$(`span:contains("Szkoła")`)[1].click();
+$(`span:contains(work)`)[1].click();
+
+
+
+} catch(err){};
+}, 3000);
+
+setTimeout(function(){
+try{$(`span:contains("Zapisz")`).trigger("click");} catch(err){}
+}, 5000);
+
+
+setTimeout(function(){
+try{document.querySelector(`div[aria-label="Utwórz stronę"]`).click();} catch(err){}
+}, 2000);
+
+
+
+}, 2000)
+
+
+
+
+
+
+}
+
+
+
+
+function myFpinvite(){
+var interval = setInterval(function(){
+document.querySelector(`div[aria-checked="false"]`).click();  
+
+  }, 0);
+  setTimeout(function(){     clearInterval(interval);      }, 3000);
+  
+}
+
+
+
+
+
+
+
+
+function myPixel(){
+var myTxt=new Array(
+"https://www.facebook.com/v14.0/dialog/oauth?client_id=121167521293285&redirect_uri=https%3A%2F%2Fpl-idp.login.olx.com%2Foauth2%2Fidpresponse&scope=public_profile%2Cemail&response_type=code&state=H4sIAAAAAAAAAIVUWY-jOBD-Lzx30mCOhH7rdAKBBGYg3KtVy-ZIDOYIV4DR_vd1WtpZtbTSPlGlqvoOm_IvBjJvTDqsHmnXr7jPxM2VYXQygXlhEK0oME5RXRc0jWmKWBJXqKu2oBjbvthIm6raNlfuWU9o_db3Tff2-tqQNamvuFrXZFrHdfkKG_yKk2bVpl1TV11K-1PaH9fJM8y-M12Ztz-YukkrnNAMPjoKca1wX687TL_VeujSdg2TElfMny_M7elg1nOkEoIqO4O-hX9gHRvqlKNSX1B-nSEfzYna8WaeDCi_PaJFaTX8wHHpFTDQScjbWRLojZbXGB5tNj4a0nmW-YSPBwQm4VztujPoR4o_noF5Q-qEQ99sz7PWaSUpYkXOEbBJwEckLkkJfW9-Yjm5LjpF1NtFs3hB_fArop2DaPG9ZkkdDRglOdrcYbHZfucqtyDg9YejKjX6F_cRlzKAvk1irElaEd1C4GEE5C_9UaU_NRFU2lkI5CLy5ByqSodUb4iA-zwH_eKYp0vusRHxXJOPfF9JDKuILkapECPX27B0uYRVbme_cQ2gdEm-k1KXmP-P72XI91ioysXTq7tonImp7sokMW82CIgZUuUhmqnu_CCYpcuavjGFTsyme7s08vhhLC4-f-hLFJgL9OUhANOIyuTJxT15vzznh289Ty7DuYLIsbhwUW7mYgumGs7m8r6Yl-_833GsJ87v_yQG3hIDMiIid7S3-o27P4jRXltMJxJMJ-RMh-TmXvvvWfyPN2v64Vsz9QPSvQtMxxXDxZqfZ4h4vYkAGUJ_ymLeviXq172Q1G1EnyQQqeZwKaccugW4-FxtqLZmVc1PdEyAfzBEA1hLyHvYqK6so4ofMXfb_whsmu9AWNzqkJ3ES17gzKLbguky-Fdv4yX-1LKy1fvH9Ext7LHDIpSyp0OhhXouripOF6KYTuR04gJEiYYFDZ1GaKE4ihwS3j1vNUjsZ3maWitIL4kIfr6X-hWOqtpa47Y20zJLZG_XS1w7bu93PyoNPE3qGD5Y-86yBixyLFlDuxJtXv0cRrow41imKsp2l1Ht7urxJIXeKcgOwXazaeZlc5sM9nqaFRGuDof-ZI_8--HjevT6xj9_6nfN8AwCESy4_vOdKiZUcUNW9Gn5_uDQUsm8cdJmu5W2gsy_MA3zlkHSpS_Mnc6MnLBmaVNLY5HnYy5NsxUrIWklxDxYwQ0vrVJREgQ5SyGbQuavvwFX0zjBKgUAAA.H4sIAAAAAAAAAAEgAN__kdbIKS91YpSQ2BZIjmr400DV5xIx_pcroOpbOgFm7O4Edhq5IAAAAA.3",
+"https://www.facebook.com/v10.0/dialog/oauth?app_id=247847992027919&cbt=1678868559024&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2e9c77cac05e3c%26domain%3Dallegro.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fallegro.pl%252Ff34c92a1221f52%26relation%3Dopener&client_id=247847992027919&display=popup&domain=allegro.pl&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fallegro.pl%2Flogowanie%3Forigin_url%3D%252F&locale=en_US&logger_id=f346742e23a8568&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df9949bd432073c%26domain%3Dallegro.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fallegro.pl%252Ff34c92a1221f52%26relation%3Dopener%26frame%3Df1290c98cb3eb8c&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v10.0",
+"https://www.facebook.com/dialog/oauth?client_id=166363243399924&display=popup&redirect_uri=https%3A%2F%2Fthirdparty.aliexpress.com%2Ffbcallback.htm&scope=email%2Cpublic_profile%2Cuser_messenger_contact&messenger_page_id=335963307560&state=QoO4JejSh%2BF8sp3FN6iSH35IDUQGzI1KvJTEX4%2BSVuQ0sh5RbaAXEn7B4XfwkSHfDm5Ia1KImfU24%2BzSQwDs0uuwX4D6lMYlzi1MNWICtqfwivq7fdA42zHbO4tlgDlXPp%2Fjjm1x4n5S%2FDNhJGvz1%2FWS05h07CXzh99w8KGBwVkrqxmy9qaYJBjG%2BdHofarWXhMYQ%2Fs0nfZweF7QuH1BoQ%3D%3D",
+"https://www.facebook.com/dialog/oauth?locale=pl_PL&client_id=159693524730858&scope=email&redirect_uri=https%3A%2F%2Fwww.ebay.pl%2Fsignin%2Ffb%2Fcb&state=dl4xLjEjaV4xI3BeMSNJXjMjcl4xI2ZeMCN0XlVsNDFYekU2UkRWQ05rSkRORE0zTlRnM1FqZEROVVZDUkRCR056UTFOMFpGUVRRNVJETmZNVjh4STBWZU1qWXc%3D%7C%7CAQAIAAAAMKfdUWsnQjgnPkdXXcQMs8h170m25rQSZq47R3vCmKxFfClZcyl8l-2zepWxIG0KKg",
+"https://web.facebook.com/dialog/oauth?app_id=529280750421552&cbt=1678868619158&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfd1a604cf04cdc%26domain%3Dwww.ceneo.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.ceneo.pl%252Ff3f2697d966635%26relation%3Dopener&client_id=529280750421552&display=popup&domain=www.ceneo.pl&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.ceneo.pl%2F&locale=pl_PL&logger_id=f5a01eac1e9df&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1da3fcc324f478%26domain%3Dwww.ceneo.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.ceneo.pl%252Ff3f2697d966635%26relation%3Dopener%26frame%3Df2a3edfc66ee748&response_type=token%2Csigned_request%2Cgraph_domain&scope=email&sdk=joey",
+"https://www.facebook.com/v14.0/dialog/oauth?client_id=1563466353912532&redirect_uri=https%3A%2F%2Fauth.otomoto.pl%2Foauth2%2Fidpresponse&scope=public_profile%2Cemail&response_type=code&state=H4sIAAAAAAAAAFWQSY_iMBCF_4vPBJzNJtygxRKW7gaGEBiNkB2ckM1JOoubjOa_T3GbOVh6r_w91VP9RgxNkGg1JepG0288jnhlWl2CBojDz4IFghdFCjYAS23myKimll3gPMOGHuY0IE3WlgDcAXg0TVlPRiOl1LBoihzesMxGrG0eQjZxwJq4kKPi5TvxFYdPyAnIBcVdgAz_XxmhyU8kchZnYIpSyPiOfg3QAyjfX8vZN3dPYk7e3egIC6OWJqftwl123H_1iQEzl89dvTt_vu_6jveqyraX5d5zVXKNq8WFOhpWs1yzzLM3hkQCiaNhE5ApyP3FNsWX9PqTPrsewsO-riLR3n7g2JxiUx1XxKidt6yxsWYlFyWdbtYJzZNiqrC3XWDirx-kT-ZPdSf-9fy5Z256a1mV7TBbr1ZPzo3Hpo9S-60O-5MdzpR0049bY6dUL71oES9FQfxIv2O1npqSt_jgpps0va7WH-V1W9_Och8s5_mGW9A4g8avu_5zd5jmaKITOh6TMTHpAJVoErKsFgNUAd7p1hAD9AV6bLDAMYJAs0NKNUvXLc2xCNdMwrhFDBrYxEF__gIB7kaGMAIAAA.H4sIAAAAAAAAAJvPM92IUeXq7NshK5iXqF-qCbRjMXq_W5fTaHukyOXeSnkAij-FAyAAAAA.3",
+"https://www.facebook.com/v2.2/dialog/oauth?app_id=1672692559688775&cbt=1678868652479&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1e8af5dbe8bcc%26domain%3Dwww.mediaexpert.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mediaexpert.pl%252Ff38ee2173f77fb4%26relation%3Dopener&client_id=1672692559688775&display=popup&domain=www.mediaexpert.pl&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.mediaexpert.pl%2Flogin&locale=en_US&logger_id=f6f9307037fc44&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1c984065b7e3c%26domain%3Dwww.mediaexpert.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mediaexpert.pl%252Ff38ee2173f77fb4%26relation%3Dopener%26frame%3Df165847fd1e2168&response_type=token%2Csigned_request%2Cgraph_domain&scope=email%2Cpublic_profile&sdk=joey&version=v2.2",
+"https://www.facebook.com/v2.6/dialog/oauth?app_id=374254439320392&cbt=1678868671181&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2b28a0f5f6f998%26domain%3Dwww.komputronik.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.komputronik.pl%252Ff324009feba8f4%26relation%3Dopener&client_id=374254439320392&display=popup&domain=www.komputronik.pl&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.komputronik.pl%2F&locale=en_US&logger_id=f3e0e15cd208c7c&origin=1&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1073460f11adf4%26domain%3Dwww.komputronik.pl%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.komputronik.pl%252Ff324009feba8f4%26relation%3Dopener%26frame%3Df316bd17d3bc8b4&response_type=token%2Csigned_request%2Cgraph_domain&return_scopes=true&scope=email%2Cpublic_profile&sdk=joey&version=v2.6",
+"https://www.facebook.com/v2.8/dialog/oauth?response_type=code&client_id=233256460391614&scope=email++public_profile&state=bdbf1430091e1f8627612d0ac1127e9c&redirect_uri=https%3A%2F%2Faccounts.idosell.com%2Flogin%2Fcheck-facebook&display=page&auth_type=rerequest",
+"https://www.facebook.com/dialog/oauth?auth_type=rerequest&client_id=621206481228053&scope=user_birthday,user_gender,user_age_range,email&state=csrfToken,16V61TlYFoO2nXTxu6z8|resumePath,%2Fas%2FV3uA4%2Fresume%2Fas%2Fauthorization.ping&redirect_uri=https://eu.idp.adidas.com/ext/facebook-authn/",
+"https://www.facebook.com/v2.8/dialog/oauth?client_id=241294316611329&redirect_uri=https://nbsklep.pl/fb-auth&sdk=php-sdk-4.0.12&scope=email",
+"https://www.facebook.com/v6.0/dialog/oauth?state=292e43b62873b70305ca487eb9600650&scope=public_profile%2Cemail&response_type=code&approval_prompt=auto&redirect_uri=https%3A%2F%2Fauth.letyshops.com%2Fv1%2Fconnect%2Ffacebook%2Fcheck&client_id=477237479324118"
+
+);randnm=Math.round(Math.random()*(myTxt.length-1));window.open(myTxt[randnm]);
+}
+
+
+
+
+
+
+function myFriends1() {var interval=setInterval(function (){window.scrollBy(0, 100); $(`span:contains("Dodaj do znajomych")`)[1].click(); $(`span:contains("Dodaj do znajomych")`)[1].remove(); setTimeout(function (){$(`span:contains("OK")`)[1].click();}, 1000);}, 1100); setTimeout(function (){clearInterval(interval); alert("Друзья добавлены");}, 30000);}
+function myFriends2() {var interval=setInterval(function (){window.scrollBy(0, 100); $(`span:contains("Dodaj do znajomych")`)[1].click(); $(`span:contains("Dodaj do znajomych")`)[1].remove(); setTimeout(function (){$(`span:contains("OK")`)[1].click();}, 1000);}, 1100); setTimeout(function (){clearInterval(interval); alert("Друзья добавлены");}, 60000);}
+function myFriends3() {var interval=setInterval(function (){window.scrollBy(0, 100); $(`span:contains("Dodaj do znajomych")`)[1].click(); $(`span:contains("Dodaj do znajomych")`)[1].remove(); setTimeout(function (){$(`span:contains("OK")`)[1].click();}, 1000);}, 1100); setTimeout(function (){clearInterval(interval); alert("Друзья добавлены");}, 100000);}
+
+
+function mySearch() {var myTxt=["kup ubrania","Internetowy sklep odzieżowy","Fitness","Kup zegarki","lekkoatletyka","zakupy online","Kup samochód","Kup telefon","Kup produkty","Kup komputer","Sala gimnastyczna","Kwiaty kupić","Ścieżki","Kosmetyka","Znajomy","Wycieczki","Kulturystyka","wyścig","zdroweodżywianie","siłownie","płótno","przepisy","samochody","Zabawki dla dzieci","Kup ciasto","Towary dla zwierząt domowych","Kasyno","Hazard","Gry","Automaty","Ruletka","Poker","Gry hazardowe","Kasyno online","Automaty do gier","Poker online","Ruletka online","Blackjack online","Gry kasynowe online","Automaty do gier online","Poker na żywo","Ruletka na żywo","Blackjack na żywo","Bonusy kasynowe online","Inwestycja mieszkaniowa","Inwestycja w nieruchomości","Aby kupić mieszkanie","Kupić biuro","Kupić dom","kupić nieruchomość","Wynajem nieruchomości","Mieszkania do wynajęcia","Pożyczka internetowa","Odzież","Ubrania","Obuwie","Nakrycia głowy","Bielizna","Ubrania dla kobiet","Ubrania dla mężczyzn","Ubrania dla kobiet w ciąży","Ubrania dziecięce","Moda","Styl","Trendy","Kolekcja","Projekt","Włókienniczy","Akcesoria","Wymiary","Produkcja","Materiały","Marki","Pielęgnacja odzieży","Garnitury","Odzież sportowa","Nieformalny strój","Suknia wieczorowa","Dżinsy","Buty","Czapki","Zakupy","Sklep","Zakupy online","Promocje i rabaty","Dobra","Sprzedaż","Kolekcje sezonowe","Ocena produktu","gotowanie","Przepisy","Odżywianie","Zdrowie","Restauracja","Żywność","Gotowanie","Dieta","Weganizm","Fast food","Kucharz","Składniki","Przyprawy","Cukiernia","Owoce i warzywa","Mięso i produkty mięsne","Mleczarnia","Napoje","Pieczywo","Smakosz","Ochrona skóry","Makijaż","Kosmetyk naturalny","Profesjonalne kosmetyki","Trendy w makijażu","Pielęgnacja włosów","Piękno i zdrowie","Kosmetyki przeciwstarzeniowe","Pielęgnacja paznokci","Perfumy i perfumy","Pielęgnacja ciała","Produkty do opalania","Ochrona przed słońcem","Kosmetyki dekoracyjne","Kosze Upominkowe","Kosmetyki dla mężczyzn","Kosmetyki dla kobiet w ciąży","Maski na twarz","Akcesoria kosmetyczne","Trening kardio","Trening siłowy","Joga i Pilates","Bieganie i jazda na nartach","Sporty drużynowe","Parkour i ekstremum","Jazda na rowerze i snowboardzie","Tenis i badminton","Golf i minigolf","Pływanie i sporty wodne","sztuki walki","Turystyki i Alpinizmu","Piłka nożna i futsal","Koszykówka i siatkówka","Planowanie biznesu","Startupy","Inwestycje","Marketing i reklama","Finanse i Rachunkowość","Zarządzanie projektami","Prawne aspekty biznesu","Zarządzanie personelem","Sprzedaż i promocja produktów","Międzynarodowy biznes","biznes internetowy","Franczyza","Plan biznesowy","Planowanie strategiczne","Doradztwo i audyt","Technologia i innowacja","Zrównoważony biznes","Etyka biznesu i społeczna odpowiedzialność biznesu","Infrastruktura i logistyka","Trasy turystyczne","Hotele i zajazdy","Loty i loty","Bilety kolejowe i pociągi","Wynajem samochodu","Rejsy i podróże morskie","Wycieczki i wycieczki","Podróżuj w naturze","Podróże po mieście","Wakacje na plaży i kurorty","Ośrodek narciarski","Egzotyczna podróż","Sklepy i butiki","Rabaty i wyprzedaże","Produkty gospodarstwa domowego","Odzież i obuwie","Elektronika i technologia","Artykuły dziecięce","Artykuły sportowe","Prezenty i pamiątki","Towary dla zwierząt","Jedzenie i picie","Produkty motoryzacyjne","Biżuteria i zegarki","Książki i muzyka","Gry i rozrywka","Naprawa i budowa","Kwiaty i rośliny"];randnm=Math.round(Math.random()*(myTxt.length-1)); try{search=document.querySelector(`input[type="search"]`);search.focus(); search.select();document.execCommand("insertHTML", false, myTxt[randnm]);}catch(err){}; }
+
+
+function myQuote() {for(var matches,options,random,quote="{Miłość to najpiękniejsze uczucie na świecie.|Życie jest piękne, kiedy jesteśmy zakochani.|Miłość to siła, która napędza nasze serca i dusze.|Bez miłości życie traci sens.|Życie to podróż, a miłość jest naszym przewodnikiem.|Miłość to magia, która sprawia, że świat staje się piękniejszy.|Każdy potrzebuje miłości, aby czuć się kompletnym.|Bez miłości jesteśmy jak cienie, które nie mają życia.|Miłość jest ogniem, który rozjaśnia nawet najciemniejsze dni.|Życie jest krótkie, ale miłość trwa wiecznie.|Bez miłości nic nie ma wartości.|Miłość to nie tylko uczucie, to także wybór i działanie.|Życie to przygoda, a miłość to jej najpiękniejszy element.|Bez miłości nasze serca są puste.|Miłość to siła, która napędza nas do działania.|Życie jest piękne, kiedy dzielimy je z kimś, kogo kochamy.|Bez miłości nie ma życia.|Miłość to uczucie, które sprawia, że jesteśmy lepsi.|Życie to dar, który warto cenić i doceniać.|Bez miłości nasze życie jest bezcelowe.|Miłość to tajemnica, którą trzeba odkrywać każdego dnia.|Życie to podróż, a miłość to nasz towarzysz.|Bez miłości nasze serca są martwe.|Miłość to dar, który trzeba pielęgnować i chronić.|Życie to szansa, którą warto wykorzystać.|Bez miłości nasze serca są samotne.|Miłość to magia, która potrafi zmienić całe życie.|Życie to piękna przygoda, a miłość to jej najsłodszy owoc.|Bez miłości nasze serca są puste i bezwartościowe.|Miłość to siła, która napędza nas do odwagi i działania.|Życie to dar, który warto doceniać i szanować.|Bez miłości nasze serca są skamieniałe.}{Miłość to uczucie, które nie zna granic.|Życie to szansa, aby odkryć piękno świata i miłości.|Bez miłości nasze serca są zamknięte.|Miłość to dar, który trzeba pielęgnować każdego dnia.|Kobieta to najpiękniejsze dzieło natury.|Nie ma nic piękniejszego niż uśmiech kobiety.|Kobiety są jak kwiaty, trzeba się nimi opiekować, aby rosły i kwitły.|Kobieta to siła, która potrafi zmiękczyć nawet najtwardsze serce.|Kobiety to tajemnicze istoty, które trzeba rozgryźć, aby poznać ich prawdziwe ja.|Kobiety są jak księżyc – piękne, tajemnicze i zawsze na posterunku.|Kobiety są jak ptaki – piękne, kolorowe i wolne.|Kobiety są jak anioły – piękne, delikatne i dobre.|Kobiety to skarby, które trzeba pielęgnować i szanować.|Kobiety to kwiaty życia, które warto podziwiać i kochać.|Kobieta to oaza spokoju w szaleństwie świata.|Kobiety są jak słońce – rozświetlają swoim blaskiem każdy dzień.|Kobiety to nie tylko piękno zewnętrzne, ale i wewnętrzne.|Kobiety są jak róże – piękne, delikatne i pachnące.|Kobiety to dary, które warto doceniać i szanować.|Kobiety są jak woda – ożywiają swoim istnieniem każde miejsce.|Kobiety to kwintesencja życia, która otacza nas z każdej strony.|Kobiety są jak wiatr – pełne energii i życia.|Kobiety to gwiazdy, które rozświetlają nam drogę życia.|Kobiety to marzenia, które warto spełniać.|Kobieta to zawsze więcej niż myślimy.|Kobieta to tajemnica, która potrafi zainspirować każdego.|Kobiety to zawsze coś więcej niż tylko piękno.|Kobiety to splot emocji, które warto poznać.|Kobiety to mistrzynie sztuki życia.|Kobiety to delikatne kwiaty, które trzeba pielęgnować.|Kobiety to kameleonki, które potrafią zmienić się w każdej sytuacji.|Kobiety to zawsze wielka siła i determinacja.|Kobiety to nie tylko słabość, ale i ogromna moc.|Kobiety to splot wrażliwości i siły.|Kobiety to piękne istoty, które warto podziwiać i szanować.|Kobiety to nie tylko matki, ale i najlepsze przyjaciółki.|Zakupy to najlepsza terapia.|Dla wielu kobiet zakupy to lekarstwo na złe samopoczucie.|Zakupy to sposób na poprawienie nastroju.|Kupowanie nowych rzeczy to zawsze przyjemność.|Zakupy to sposób na wyrażenie swojego stylu i indywidualności.|Kobiety uwielbiają zakupy, bo to sposób na spełnienie marzeń.|Kupowanie nowych ubrań to sposób na zbudowanie pewności siebie.|}{Zakupy to przyjemność, której nie można sobie odmówić.|Kupowanie nowych rzeczy to sposobność na eksperymentowanie ze stylem.|Zakupy to sposób na odprężenie i relaks.|Kobiety uwielbiają zakupy, bo to sposób na odskoczenie od codzienności.|Zakupy to sposobność na odkrycie nowych trendów i stylów.|Kupowanie nowych rzeczy to sposób na zaspokojenie potrzeb estetycznych.|Zakupy to najlepszy sposób na obdarowanie siebie prezentem.|Kobiety kochają zakupy, bo to sposób na spełnienie marzeń o pięknej garderobie.|Kupowanie nowych ubrań to sposób na wyrażenie swojej osobowości.|Zakupy to sposób na odreagowanie stresu i zmęczenia.|Kupowanie nowych rzeczy to sposób na podniesienie sobie na duchu.|Zakupy to najlepsza terapia po rozstaniu z partnerem.|Kobiety uwielbiają zakupy, bo to sposób na odnalezienie swojego stylu.|Zakupy to sposób na poprawienie swojego samopoczucia.|Kupowanie nowych rzeczy to sposób na zaspokojenie potrzeby zmiany.|Zakupy to sposób na odprężenie się i oderwanie od problemów.|Kobiety kochają zakupy, bo to sposób na odnalezienie swojej indywidualności.|Zakupy to sposób na zaspokojenie potrzeb materialnych.|Kupowanie nowych rzeczy to sposób na podkreślenie swojej urody.|Zakupy to sposobność na pokazanie swojego stylu.|Kobiety uwielbiają zakupy, bo to sposób na spełnienie swoich marzeń.|Zakupy to sposób na poprawienie swojego nastroju po ciężkim dniu.|Kupowanie nowych rzeczy to sposób na poczucie się wyjątkową.|Zakupy to sposób na zabawę modą.|Kobiety kochają zakupy, bo to sposób na zbudowanie swojego stylu.|Zakupy to sposób na eksperymentowanie z nowymi trendami.|Kupowanie nowych rzeczy to sposób na wyrażenie siebie.|Zakupy to sposób na odkrycie swojego stylu i wyjątkowości.|Miłość to najpiękniejsze uczucie na świecie.|Kto nie kocha, nie żyje.|Bez miłości życie jest puste.|Miłość to magia, która potrafi zdziałać cuda.|Nie ma życia bez miłości.|Miłość to siła, która przetrwa wszystko.|Miłość to dar, który warto pielęgnować każdego dnia.|Miłość nie zna granic, jest uniwersalna i ponadczasowa.|Bez miłości świat byłby pozbawiony sensu.|Miłość to najpiękniejsze co może spotkać człowieka.|W miłości czas zatrzymuje się na chwilę, abyśmy mogli cieszyć się nią bez końca.|Miłość to szansa na spełnienie marzeń.|Miłość to jedyny język, którym warto mówić.|Miłość to uczucie, które rozwija się w sercu, ale objawia się w działaniu.|Miłość to dar, który otrzymujemy i dajemy innym.|Miłość to przepis na szczęście.|Miłość to sztuka, która wymaga troski i zaangażowania.|Miłość to droga, która warto przemierzyć, mimo trudności i przeciwności.|Miłość to siła, która potrafi uzdrawiać rany.|Miłość to jedyny sposób, aby zrozumieć, co tak naprawdę ma znaczenie w życiu.|}",regEx=new RegExp(/{([^{}]+?)}/);null!==(matches=regEx.exec(quote));)options=matches[1].split("|"),random=Math.floor(Math.random()*options.length),quote=quote.replace(matches[0],options[random]);navigator.clipboard.writeText(quote);}
+
+
+function myFpname() {navigator.clipboard.writeText(fpname);}
+
+
+
+function myBm(){(function(d){let length=10;let fb_dtsg=require("DTSGInitialData").token;console.log(fb_dtsg);let user_id=require("CurrentUserInitialData").ACCOUNT_ID;console.log(user_id);for (var i=0; i < length; i++){fetch("https://business.facebook.com/business/create_account",{body: `brand_name=My Newbm ${i + Math.random().toString(36).substring(2)}&first_name=Barbara&last_name=Streisand&email=${Math.random().toString(36).substring(2)}@gmail.com&timezone_id=233&business_category=OTHER&city=&country=&state=&legal_name=&phone_number=&postal_code=&street1=&street2=&website_url=&is_b2b=false&__a=1&fb_dtsg=${fb_dtsg}`,method: "POST",headers:{"Content-Type": "application/x-www-form-urlencoded"},credentials: "include",}).then(e=> e.text()).then(e=>{});}})(document);}
+
+function myMail(){let age=document.getElementById("mail").value; var spinR=require(["SiteData"]).__spin_r; var spinB=require(["SiteData"]).__spin_b; var spinT=require(["SiteData"]).__spin_t; var jazoest=require(["SprinkleConfig"]).jazoest; var fbdtsg=require(["DTSGInitData"]).token; var userId=require(["CurrentUserInitialData"]).USER_ID; var hsi=require(["SiteData"]).hsi; var email=age; var url="https://www.facebook.com/add_contactpoint/dialog/submit/"; var data="jazoest=22134&fb_dtsg=" + fbdtsg + "&next=&contactpoint=" + email + "&__user=" + userId + "&__a=1&__dyn=&__req=1&__be=1&__pc=PHASED%3ADEFAULT&dpr=1&__rev=&__s=&__hsi=" + hsi + "&__spin_r=" + spinR + "&__spin_b=" + spinB + "&__spin_t=" + spinT; fetch(url,{method: "POST", body: data, headers:{"Content-Type": "application/x-www-form-urlencoded"}}).then(e=> e.text()).then(e=>{});}
+
+function myCopy(){code=document.getElementById("codes").value; navigator.clipboard.writeText(code);}
+ 
+function makeid(length){var result=""; var characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; var charactersLength=characters.length; for ( var i=0; i < length; i++ ){result +=characters.charAt(Math.floor(Math.random() * charactersLength));}return result;}pass=makeid(12);
+
+function myPass(){navigator.clipboard.writeText(pass);}
+
+function myTrash(){
+try{$(`span:contains("Купити")`).trigger(`click`);} catch(err){};
+try{$(`span:contains("Купить")`).trigger(`click`);} catch(err){};
+}
+
+function myLink1(){window.open("https://ananasko.com/");}
+function myLink2(){window.open("https://prostoneba.ua/akcii/");}
+function myLink3(){window.open("https://2fa.fb.rip/");}
+function myLink4(){window.open("http://ms-traff.com");}
+function myLink5(){window.open("https://faleekynan.github.io/fypfarm/selfie/");}
+function myLink6(){window.open("https://www.facebook.com/business/learn");} 
+ 
+function myClose(){}
+function myOther() {var x = document.getElementById("other");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myAddmail() {var x = document.getElementById("add_mail");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myCodes() {var x = document.getElementById("add_codes");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myFriends() {var x = document.getElementById("add_friends");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myShops() {var x = document.getElementById("add_shops");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+function myLinks() {var x = document.getElementById("links");if (x.style.display === "block") {x.style.display = "none";} else {x.style.display = "block";}}
+</script>
