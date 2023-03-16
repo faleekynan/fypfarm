@@ -9,6 +9,7 @@ nav {
 .right_ad,
 .left_ad{
 	position:relative;
+	z-index: 99999999999;
 }
 
 .adv{
@@ -120,8 +121,10 @@ background-image: url(img/back2.jpg);
 .wrap{
 	/*width: 30%;*/
     margin: 0 auto;
+	    z-index: 8888888888888;
+    position: relative;
 }
-
+.first,
 .white_back{
 	position: fixed;
     height: 100%;
