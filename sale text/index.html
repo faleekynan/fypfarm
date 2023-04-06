@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Фраза</title>
+	<style>
+        body {
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+        }
+        #result {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+    </style>
+    <script>
+        function spinText(text) {
+            var regex = /{([^{}]+?)}/g;
+            function replaceBlock(match, p1) {
+                if (p1.includes('|')) {
+                    var options = p1.split('|');
+                    var randomIndex = Math.floor(Math.random() * options.length);
+                    return options[randomIndex];
+                } else {
+                    return spinText(p1);
+                }
+            }
+            var spunText = text.replace(regex, replaceBlock);
+            return spunText;
+        }
+
+        function generateSpunText() {
+            var spintaxText = "{Привет|Здравствуй|Добрый день}<br><br>{Есть|У меня} {к тебе |к Вам |}предложение🔥 {к сотрудничеству|посотрудничать}🤝 по поставкам {расходников|аккаунтов|кингов} {FB|Facebook|Фейсбук|ФБ}👀<br><br>{Предлагаю |Хочу предложить |}НАШИ {аккаунты|акки} ДОЛГОЖИТЕЛИ👨‍🦳,  {запускаются|заливаются} с ноги🦵<br><br>{ЖИРНЫЕ|ХОРОШИЕ} скидки {постоянным клиентам|Для постоянных клиентов}<br><br>👑 {ПЗРД|PZRD} И ОБЫЧНЫЕ {КИНГИ|KING}<br><br>#️⃣ {СЕТКИ|КИНГ +9 РК}<br><br>🧩 {САМОРЕГИ|АВТОРЕГИ}<br><br>💻 {МОЩНЫЙ |}РУЧНОЙ ФАРМ<br><br>🦾 {КРЕПКИЙ |}АВТО{-|}ФАРМ<br><br>Подскажи{ пожалуйста|}, {актуально сейчас|с каких аккаунтов заливаешь}?";
+            var spunText = spinText(spintaxText);
+            document.getElementById("result").innerHTML = spunText;
+        }
+
+        function copyText() {
+            var resultDiv = document.getElementById("result");
+            var range = document.createRange();
+            range.selectNode(resultDiv);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            var copyStatusDiv = document.getElementById("copyStatus");
+            copyStatusDiv.innerHTML = "Текст скопійовано!";
+        }
+    </script>
+</head>
+<body onload="generateSpunText()">
+    <button onclick="copyText()">COPY</button>
+    <div id="result"></div>
+	<br>
+    <div id="copyStatus"></div>
+</body>
+</html>
